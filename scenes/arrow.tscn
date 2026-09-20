@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://00cn02h8ffab"]
 
 [ext_resource type="Script" uid="uid://b5aw7rb3cbsox" path="res://scripts/arrow.gd" id="1_23jat"]
-[ext_resource type="Texture2D" uid="uid://dme1h64kyplmn" path="res://assets/0x72_DungeonTilesetII_v1.7/frames/weapon_arrow.png" id="1_umosx"]
+[ext_resource type="PackedScene" uid="uid://dvpnip0rh71uh" path="res://scenes/arrow_sprite.tscn" id="2_23jat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqmjc"]
 size = Vector2(20, 2)
@@ -12,8 +12,11 @@ script = ExtResource("1_23jat")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1285754115]
 shape = SubResource("RectangleShape2D_nqmjc")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=650494738]
-rotation = 1.5707964
-texture = ExtResource("1_umosx")
+[node name="ArrowSprite" parent="." unique_id=1884731302 instance=ExtResource("2_23jat")]
+scale = Vector2(0.71232444, 1.0119861)
+
+[node name="Timer" type="Timer" parent="." unique_id=1560202885]
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

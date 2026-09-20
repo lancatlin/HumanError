@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dvpnip0rh71uh"]
+
+[ext_resource type="Texture2D" uid="uid://dme1h64kyplmn" path="res://assets/0x72_DungeonTilesetII_v1.7/frames/weapon_arrow.png" id="1_4kkjn"]
+
+[node name="ArrowSprite" type="Sprite2D" unique_id=1884731302]
+rotation = 1.5707964
+texture = ExtResource("1_4kkjn")

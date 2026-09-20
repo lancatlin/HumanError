@@ -2,16 +2,46 @@
 
 [ext_resource type="Script" uid="uid://sswb373xqqqg" path="res://scripts/bow.gd" id="1_prjx1"]
 [ext_resource type="Texture2D" uid="uid://bqpib52yiq5h1" path="res://assets/0x72_DungeonTilesetII_v1.7/frames/weapon_bow.png" id="1_vt0lb"]
+[ext_resource type="Texture2D" uid="uid://byt2pnkjaqba7" path="res://assets/0x72_DungeonTilesetII_v1.7/frames/weapon_bow_2.png" id="2_rivji"]
+[ext_resource type="PackedScene" uid="uid://dvpnip0rh71uh" path="res://scenes/arrow_sprite.tscn" id="4_atxj4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqmjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rivji")
+}],
+"loop": 1,
+"name": &"hold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vt0lb")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Bow" type="Node2D" unique_id=315595610]
 script = ExtResource("1_prjx1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=871725583]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=310023668]
 position = Vector2(17, 6.7762636e-21)
 scale = Vector2(0.71428573, 0.71428573)
-texture = ExtResource("1_vt0lb")
+sprite_frames = SubResource("SpriteFrames_nqmjc")
+animation = &"hold"
 
 [node name="Muzzle" type="Node2D" parent="." unique_id=112699741]
 position = Vector2(22, 0)
 
+[node name="Timer" type="Timer" parent="." unique_id=1350772956]
+wait_time = 0.5
+
+[node name="ArrowSprite" parent="." unique_id=1884731302 instance=ExtResource("4_atxj4")]
+position = Vector2(22, 0)
+scale = Vector2(0.5532308, 0.95278025)
+
 [connection signal="shoot_arrow" from="." to="." method="_on_shoot_arrow"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

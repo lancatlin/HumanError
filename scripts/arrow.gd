@@ -24,7 +24,6 @@ func destroy() -> void:
 
 
 func _on_timer_timeout() -> void:
-	print("timeout")
 	destroy()
 
 

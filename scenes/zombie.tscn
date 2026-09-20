@@ -89,7 +89,7 @@ position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_nqmjc")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.8776548
+frame_progress = 0.5213653
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=947368130]
 position = Vector2(1, -8)
@@ -111,4 +111,9 @@ shape = SubResource("RectangleShape2D_rs4xq")
 position = Vector2(1, -7.5)
 shape = SubResource("RectangleShape2D_rs4xq")
 
+[node name="RebornTimer" type="Timer" parent="." unique_id=1934397008]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="timeout" from="RebornTimer" to="." method="_on_reborn_timer_timeout"]

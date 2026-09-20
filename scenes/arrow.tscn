@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://00cn02h8ffab"]
+
+[ext_resource type="Script" uid="uid://b5aw7rb3cbsox" path="res://scripts/arrow.gd" id="1_23jat"]
+[ext_resource type="Texture2D" uid="uid://dme1h64kyplmn" path="res://assets/0x72_DungeonTilesetII_v1.7/frames/weapon_arrow.png" id="1_umosx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqmjc"]
+size = Vector2(20, 2)
+
+[node name="Arrow" type="Area2D" unique_id=815394585]
+script = ExtResource("1_23jat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1285754115]
+shape = SubResource("RectangleShape2D_nqmjc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=650494738]
+rotation = 1.5707964
+texture = ExtResource("1_umosx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

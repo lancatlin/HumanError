@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cr81o0io1g8yl"]
+
+[ext_resource type="Script" uid="uid://sswb373xqqqg" path="res://scripts/bow.gd" id="1_prjx1"]
+[ext_resource type="Texture2D" uid="uid://bqpib52yiq5h1" path="res://assets/0x72_DungeonTilesetII_v1.7/frames/weapon_bow.png" id="1_vt0lb"]
+
+[node name="Bow" type="Node2D" unique_id=315595610]
+script = ExtResource("1_prjx1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=871725583]
+position = Vector2(17, 6.7762636e-21)
+scale = Vector2(0.71428573, 0.71428573)
+texture = ExtResource("1_vt0lb")
+
+[node name="Muzzle" type="Node2D" parent="." unique_id=112699741]
+position = Vector2(22, 0)
+
+[connection signal="shoot_arrow" from="." to="." method="_on_shoot_arrow"]

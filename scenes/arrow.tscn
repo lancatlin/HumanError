@@ -2,11 +2,15 @@
 
 [ext_resource type="Script" uid="uid://b5aw7rb3cbsox" path="res://scripts/arrow.gd" id="1_23jat"]
 [ext_resource type="PackedScene" uid="uid://dvpnip0rh71uh" path="res://scenes/arrow_sprite.tscn" id="2_23jat"]
+[ext_resource type="Script" uid="uid://jkte40tlif23" path="res://scripts/attack_component.gd" id="3_q8ifc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqmjc"]
 size = Vector2(20, 2)
 
-[node name="Arrow" type="Area2D" unique_id=815394585]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs4xq"]
+size = Vector2(20, 4)
+
+[node name="Arrow" type="Area2D" unique_id=1074016563]
 script = ExtResource("1_23jat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1285754115]
@@ -18,5 +22,12 @@ scale = Vector2(0.71232444, 1.0119861)
 [node name="Timer" type="Timer" parent="." unique_id=1560202885]
 one_shot = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="AttackComponent" type="Area2D" parent="." unique_id=1776978762]
+priority = 1
+script = ExtResource("3_q8ifc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=266149207]
+shape = SubResource("RectangleShape2D_rs4xq")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="AttackComponent" to="AttackComponent" method="_on_area_entered"]

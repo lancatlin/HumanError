@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://c1r77g57vpt2h" path="res://assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://df3hix3kogn2a" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="3_dqkch"]
+[ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -75,6 +77,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_nqmjc"]
 radius = 4.1231055
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rs4xq"]
+radius = 5.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1587527133]
 script = ExtResource("1_g2els")
 
@@ -88,3 +93,14 @@ frame_progress = 0.25694525
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=834864266]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_nqmjc")
+
+[node name="HitboxComponent" parent="." unique_id=806359955 node_paths=PackedStringArray("health_component") instance=ExtResource("3_dqkch")]
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1013750939]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_rs4xq")
+
+[node name="HealthComponent" parent="." unique_id=2091267153 instance=ExtResource("3_qhqgy")]
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

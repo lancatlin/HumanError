@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://lktpbvy21rel" path="res://scenes/player.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cr81o0io1g8yl" path="res://scenes/bow.tscn" id="4_p57ef"]
 [ext_resource type="Script" uid="uid://dogix12unluuv" path="res://scripts/arrow_manager.gd" id="5_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://c0oq5wyx3qvjd" path="res://scenes/zombie.tscn" id="6_p57ef"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nqmjc"]
 
@@ -259,5 +260,10 @@ position = Vector2(0, -8)
 [node name="ArrowManager" type="Node2D" parent="." unique_id=170038142]
 unique_name_in_owner = true
 script = ExtResource("5_u5sy4")
+
+[node name="ZombieManager" type="Node2D" parent="." unique_id=932954026]
+
+[node name="Zombie" parent="ZombieManager" unique_id=617884653 instance=ExtResource("6_p57ef")]
+position = Vector2(315, 148)
 
 [connection signal="shoot_arrow" from="Player/Bow" to="ArrowManager" method="_on_bow_shoot_arrow"]

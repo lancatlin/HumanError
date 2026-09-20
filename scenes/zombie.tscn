@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://6e1f2ylut54t" path="res://scripts/zombie.gd" id="1_4gx57"]
 [ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="2_xepks"]
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="3_4gx57"]
+[ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="5_ycv6i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_httt1"]
 atlas = ExtResource("1_1vlb3")
@@ -88,7 +89,7 @@ position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_nqmjc")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.020210722
+frame_progress = 0.8776548
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=947368130]
 position = Vector2(1, -8)
@@ -101,6 +102,12 @@ MAX_HP = 1
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1375180614]
+position = Vector2(1, -7.5)
+shape = SubResource("RectangleShape2D_rs4xq")
+
+[node name="AttackComponent" parent="." unique_id=71310347 instance=ExtResource("5_ycv6i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1113141945]
 position = Vector2(1, -7.5)
 shape = SubResource("RectangleShape2D_rs4xq")
 

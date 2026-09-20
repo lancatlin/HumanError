@@ -26,3 +26,7 @@ func destroy() -> void:
 func _on_timer_timeout() -> void:
 	print("timeout")
 	destroy()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	destroy()

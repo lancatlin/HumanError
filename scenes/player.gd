@@ -25,3 +25,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_health_component_died() -> void:
 	queue_free()
+
+
+func _on_health_component_health_changed(current: int, max: int) -> void:
+	print("HP: %d/%d" % [current, max])

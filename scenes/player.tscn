@@ -104,3 +104,4 @@ shape = SubResource("CircleShape2D_rs4xq")
 [node name="HealthComponent" parent="." unique_id=2091267153 instance=ExtResource("3_qhqgy")]
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="health_changed" from="HealthComponent" to="." method="_on_health_component_health_changed"]

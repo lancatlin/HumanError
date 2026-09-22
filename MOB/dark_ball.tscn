@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://0ouef41puhts"]
+
+[ext_resource type="Script" uid="uid://c21rv1erllkim" path="res://scripts/mob/dark_ball.gd" id="1_2se3n"]
+[ext_resource type="Texture2D" uid="uid://b7yt35p1eae03" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame001.png" id="2_sw3i4"]
+[ext_resource type="Texture2D" uid="uid://bw0bfxdq3lx54" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame002.png" id="3_elgyj"]
+[ext_resource type="Texture2D" uid="uid://duabqqlyxow0t" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame003.png" id="4_rpbl6"]
+[ext_resource type="Texture2D" uid="uid://cscgq7pvbo3l2" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame004.png" id="5_uwf7u"]
+[ext_resource type="Texture2D" uid="uid://bub3dq3lcao4p" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame005.png" id="6_j40ny"]
+[ext_resource type="Texture2D" uid="uid://dr5vmw3luqgfo" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame006.png" id="7_rg6ph"]
+[ext_resource type="Texture2D" uid="uid://blu8jyi2fiyat" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame007.png" id="8_075r7"]
+[ext_resource type="Texture2D" uid="uid://d3xl4u7wafg0e" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame008.png" id="9_20nuw"]
+[ext_resource type="Texture2D" uid="uid://ck7vpkom18l74" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame009.png" id="10_xs13w"]
+[ext_resource type="Texture2D" uid="uid://c0sokwbbldhg1" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame010.png" id="11_4wjl5"]
+[ext_resource type="Texture2D" uid="uid://uopcvxuf17ln" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame011.png" id="12_8mjq3"]
+[ext_resource type="Texture2D" uid="uid://bkdk783mywwok" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame012.png" id="13_o5kxo"]
+[ext_resource type="Texture2D" uid="uid://cwtourcnq3c6b" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame013.png" id="14_kwohv"]
+[ext_resource type="Texture2D" uid="uid://b0opw84nbinw2" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame014.png" id="15_4en68"]
+[ext_resource type="Texture2D" uid="uid://c2h4fp4evr5vy" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame015.png" id="16_7vdur"]
+[ext_resource type="Texture2D" uid="uid://bp7vhka1ixenl" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_ball/frame016.png" id="17_8jnsb"]
+[ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="18_elgyj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_obhly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sw3i4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_elgyj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rpbl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uwf7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j40ny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rg6ph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_075r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_20nuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xs13w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4wjl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8mjq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_o5kxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_kwohv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4en68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7vdur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8jnsb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_elgyj"]
+radius = 7.0
+
+[node name="dark_ball" type="Node2D" unique_id=713200606]
+script = ExtResource("1_2se3n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=527312665]
+sprite_frames = SubResource("SpriteFrames_obhly")
+autoplay = "default"
+
+[node name="AttackComponent" parent="." unique_id=71310347 instance=ExtResource("18_elgyj")]
+character_class = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1542243952]
+shape = SubResource("CircleShape2D_elgyj")

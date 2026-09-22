@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqgnq6deri6o2"]
 
-[ext_resource type="Script" uid="uid://6e1f2ylut54t" path="res://scripts/zombie.gd" id="1_r060u"]
+[ext_resource type="Script" uid="uid://6e1f2ylut54t" path="res://scripts/mob/zombie.gd" id="1_r060u"]
 [ext_resource type="Texture2D" uid="uid://c1r77g57vpt2h" path="res://assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7.png" id="2_16msr"]
 [ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="3_5luk4"]
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="4_qrc7c"]
@@ -118,4 +118,5 @@ wait_time = 5.0
 one_shot = true
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]
 [connection signal="timeout" from="RebornTimer" to="." method="_on_reborn_timer_timeout"]

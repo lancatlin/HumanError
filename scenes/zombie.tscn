@@ -100,12 +100,14 @@ MAX_HP = 1
 
 [node name="HitboxComponent" parent="." unique_id=806359955 node_paths=PackedStringArray("health_component") instance=ExtResource("3_4gx57")]
 health_component = NodePath("../HealthComponent")
+character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1375180614]
 position = Vector2(1, -7.5)
 shape = SubResource("RectangleShape2D_rs4xq")
 
 [node name="AttackComponent" parent="." unique_id=71310347 instance=ExtResource("5_ycv6i")]
+character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1113141945]
 position = Vector2(1, -7.5)

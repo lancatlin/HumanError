@@ -3,6 +3,7 @@ extends Area2D
 class_name HitboxComponent
 
 @export var health_component: HealthComponent
+@export var character_class: Types.CharacterClass
 
 func damage(attack: Attack):
 	print("take damage", attack)

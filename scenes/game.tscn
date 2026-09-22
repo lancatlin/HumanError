@@ -278,49 +278,49 @@ position = Vector2(406, 195)
 [node name="Troll2" parent="." unique_id=803841948 instance=ExtResource("6_p57ef")]
 position = Vector2(74, 238)
 
-[node name="Zombie" parent="ZombieManager" unique_id=617884653 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie2" parent="." unique_id=617884653 instance=ExtResource("6_p57ef")]
 position = Vector2(388, 135)
 
-[node name="Zombie2" parent="ZombieManager" unique_id=1975369732 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie3" parent="." unique_id=1759475775 instance=ExtResource("6_p57ef")]
 position = Vector2(390, 234)
 
-[node name="Zombie3" parent="ZombieManager" unique_id=63526586 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie4" parent="." unique_id=63526586 instance=ExtResource("6_p57ef")]
 position = Vector2(135, 133)
 
-[node name="Zombie4" parent="ZombieManager" unique_id=1040880947 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie5" parent="." unique_id=1040880947 instance=ExtResource("6_p57ef")]
 position = Vector2(138, 261)
 
-[node name="Zombie5" parent="ZombieManager" unique_id=33673306 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie6" parent="." unique_id=33673306 instance=ExtResource("6_p57ef")]
 position = Vector2(324, 296)
 
-[node name="Zombie6" parent="ZombieManager" unique_id=473255100 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie7" parent="." unique_id=473255100 instance=ExtResource("6_p57ef")]
 position = Vector2(478, 224)
 
-[node name="Zombie7" parent="ZombieManager" unique_id=432999811 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie8" parent="." unique_id=432999811 instance=ExtResource("6_p57ef")]
 position = Vector2(473, 291)
 
-[node name="Zombie8" parent="ZombieManager" unique_id=1328587118 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie9" parent="." unique_id=1328587118 instance=ExtResource("6_p57ef")]
 position = Vector2(459, 86)
 
-[node name="Zombie9" parent="ZombieManager" unique_id=1595058300 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie10" parent="." unique_id=1595058300 instance=ExtResource("6_p57ef")]
 position = Vector2(390, 58)
 
-[node name="Zombie10" parent="ZombieManager" unique_id=1612145635 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie11" parent="." unique_id=1612145635 instance=ExtResource("6_p57ef")]
 position = Vector2(270, 53)
 
-[node name="Zombie11" parent="ZombieManager" unique_id=399461590 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie12" parent="." unique_id=399461590 instance=ExtResource("6_p57ef")]
 position = Vector2(60, 48)
 
-[node name="Zombie12" parent="ZombieManager" unique_id=1303335703 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie13" parent="." unique_id=1303335703 instance=ExtResource("6_p57ef")]
 position = Vector2(82, 157)
 
-[node name="Zombie13" parent="ZombieManager" unique_id=1270189399 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie14" parent="." unique_id=1270189399 instance=ExtResource("6_p57ef")]
 position = Vector2(51, 265)
 
-[node name="Zombie14" parent="ZombieManager" unique_id=1219456419 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie15" parent="." unique_id=1219456419 instance=ExtResource("6_p57ef")]
 position = Vector2(85, 322)
 
-[node name="Zombie15" parent="ZombieManager" unique_id=1621326673 instance=ExtResource("6_p57ef")]
+[node name="ZombieManager#Zombie16" parent="." unique_id=1621326673 instance=ExtResource("6_p57ef")]
 position = Vector2(170, 318)
 
 [connection signal="shoot_arrow" from="Player/Bow" to="ArrowManager" method="_on_bow_shoot_arrow"]

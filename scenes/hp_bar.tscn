@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://rvtvif8xtt24"]
+
+[ext_resource type="Script" uid="uid://c7y0224x6uveu" path="res://scripts/hp_bar.gd" id="1_hb236"]
+
+[node name="HPBar" type="Node2D" unique_id=1214830283]
+script = ExtResource("1_hb236")

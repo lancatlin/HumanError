@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://diigk61g3mwa" path="res://assets/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://lktpbvy21rel" path="res://scenes/player.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://cr81o0io1g8yl" path="res://scenes/bow.tscn" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://rvtvif8xtt24" path="res://scenes/hp_bar.tscn" id="4_u5sy4"]
 [ext_resource type="Script" uid="uid://dogix12unluuv" path="res://scripts/arrow_manager.gd" id="5_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://cn2ckmjymewo2" path="res://MOB/Troll.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://cqgnq6deri6o2" path="res://MOB/zombie.tscn" id="8_0tnpc"]
@@ -255,6 +256,9 @@ motion_mode = 1
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1261729415]
 zoom = Vector2(4, 4)
 
+[node name="HPBar" parent="Player/Camera2D" unique_id=1214830283 instance=ExtResource("4_u5sy4")]
+position = Vector2(-136, -75)
+
 [node name="Bow" parent="Player" unique_id=315595610 instance=ExtResource("4_p57ef")]
 position = Vector2(0, -8)
 
@@ -273,5 +277,50 @@ position = Vector2(406, 195)
 
 [node name="Troll2" parent="." unique_id=803841948 instance=ExtResource("6_p57ef")]
 position = Vector2(74, 238)
+
+[node name="Zombie" parent="ZombieManager" unique_id=617884653 instance=ExtResource("6_p57ef")]
+position = Vector2(388, 135)
+
+[node name="Zombie2" parent="ZombieManager" unique_id=1975369732 instance=ExtResource("6_p57ef")]
+position = Vector2(390, 234)
+
+[node name="Zombie3" parent="ZombieManager" unique_id=63526586 instance=ExtResource("6_p57ef")]
+position = Vector2(135, 133)
+
+[node name="Zombie4" parent="ZombieManager" unique_id=1040880947 instance=ExtResource("6_p57ef")]
+position = Vector2(138, 261)
+
+[node name="Zombie5" parent="ZombieManager" unique_id=33673306 instance=ExtResource("6_p57ef")]
+position = Vector2(324, 296)
+
+[node name="Zombie6" parent="ZombieManager" unique_id=473255100 instance=ExtResource("6_p57ef")]
+position = Vector2(478, 224)
+
+[node name="Zombie7" parent="ZombieManager" unique_id=432999811 instance=ExtResource("6_p57ef")]
+position = Vector2(473, 291)
+
+[node name="Zombie8" parent="ZombieManager" unique_id=1328587118 instance=ExtResource("6_p57ef")]
+position = Vector2(459, 86)
+
+[node name="Zombie9" parent="ZombieManager" unique_id=1595058300 instance=ExtResource("6_p57ef")]
+position = Vector2(390, 58)
+
+[node name="Zombie10" parent="ZombieManager" unique_id=1612145635 instance=ExtResource("6_p57ef")]
+position = Vector2(270, 53)
+
+[node name="Zombie11" parent="ZombieManager" unique_id=399461590 instance=ExtResource("6_p57ef")]
+position = Vector2(60, 48)
+
+[node name="Zombie12" parent="ZombieManager" unique_id=1303335703 instance=ExtResource("6_p57ef")]
+position = Vector2(82, 157)
+
+[node name="Zombie13" parent="ZombieManager" unique_id=1270189399 instance=ExtResource("6_p57ef")]
+position = Vector2(51, 265)
+
+[node name="Zombie14" parent="ZombieManager" unique_id=1219456419 instance=ExtResource("6_p57ef")]
+position = Vector2(85, 322)
+
+[node name="Zombie15" parent="ZombieManager" unique_id=1621326673 instance=ExtResource("6_p57ef")]
+position = Vector2(170, 318)
 
 [connection signal="shoot_arrow" from="Player/Bow" to="ArrowManager" method="_on_bow_shoot_arrow"]

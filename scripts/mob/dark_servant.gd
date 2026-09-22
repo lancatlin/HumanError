@@ -6,7 +6,12 @@ extends CharacterBody2D
 @onready var health_component: HealthComponent = $HealthComponent
 
 
-const SPEED: int = 22
+#---------load dark ball--------------
+@onready var shoot_timer:Timer = $shot_timer  # timer
+const  dark_ball = preload("res://MOB/dark_ball.tscn")
+#------------------------------------------
+
+const SPEED: int = -13
 const SEARCH_DISTANCE: int = 150
 
 
@@ -41,3 +46,24 @@ func _on_health_component_hurted() -> void:
 	animated_sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	animated_sprite.modulate = Color.WHITE
+
+#-------------shot_dark_ball----------------------------
+
+func _on_shot_timer_timeout() -> void:
+	var ball_player_diff: Vector2 = player.global_position - global_position
+	
+	# shot distence
+	if ball_player_diff.length() > SEARCH_DISTANCE:
+		return
+		
+	var ball = dark_ball.instantiate()
+	
+	ball.global_position = global_position
+	
+	ball.direction = ball_player_diff.normalized()
+	
+	get_tree().current_scene.add_child(ball)
+	
+	
+	
+	

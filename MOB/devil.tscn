@@ -120,4 +120,5 @@ wait_time = 5.0
 one_shot = true
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]
 [connection signal="timeout" from="RebornTimer" to="." method="_on_reborn_timer_timeout"]

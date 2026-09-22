@@ -10,19 +10,34 @@ const SPEED: int = 20
 const SEARCH_DISTANCE: int = 150
 
 
-func _process(delta: float):
-	var diff: Vector2 = player.position - position
+func _physics_process(delta: float):
+	var diff: Vector2 = player.position - position  
+	
+	# fix 重叠,don't use position, use velocity
 	if diff.length() < SEARCH_DISTANCE:
-		position += diff.normalized() * SPEED * delta
+		velocity = diff.normalized() * SPEED
+		move_and_slide()
+		
 		animated_sprite.flip_h = diff.x < 0
 		animated_sprite.play("chase")
 	else:
+		
+		velocity = Vector2.ZERO
 		animated_sprite.play("idle")
 
 
 func _on_health_component_died() -> void:
+	await get_tree().create_timer(0.1).timeout # wait after damage
+	animated_sprite.modulate = Color.BLACK
+	await get_tree().create_timer(0.5).timeout
 	queue_free()
 
 
 func _on_reborn_timer_timeout() -> void:
 	pass
+
+#--------hurt-----
+func _on_health_component_hurted() -> void:
+	animated_sprite.modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	animated_sprite.modulate = Color.WHITE

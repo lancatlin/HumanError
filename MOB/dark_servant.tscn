@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dl1n332fu2eg"]
+
+[ext_resource type="Script" uid="uid://caraat46x2gce" path="res://scripts/mob/dark_servant.gd" id="1_ekvlj"]
+[ext_resource type="Texture2D" uid="uid://uw2uwraj724r" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_servant.png" id="2_ekvlj"]
+[ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="3_6oyfb"]
+[ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="4_g8be5"]
+[ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="5_5acp8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tayp"]
+atlas = ExtResource("2_ekvlj")
+region = Rect2(0, 0, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oyfb"]
+atlas = ExtResource("2_ekvlj")
+region = Rect2(16, 0, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8be5"]
+atlas = ExtResource("2_ekvlj")
+region = Rect2(32, 0, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5acp8"]
+atlas = ExtResource("2_ekvlj")
+region = Rect2(48, 0, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scxcd"]
+atlas = ExtResource("2_ekvlj")
+region = Rect2(48, 0, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy2sh"]
+atlas = ExtResource("2_ekvlj")
+region = Rect2(32, 0, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wa2k"]
+atlas = ExtResource("2_ekvlj")
+region = Rect2(16, 0, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aam2"]
+atlas = ExtResource("2_ekvlj")
+region = Rect2(0, 0, 16, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3dby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tayp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oyfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8be5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5acp8")
+}],
+"loop": 1,
+"name": &"chase",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scxcd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy2sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wa2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aam2")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqmjc"]
+size = Vector2(19.75, 23.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs4xq"]
+size = Vector2(20.75, 26.25)
+
+[node name="dark_servant" type="CharacterBody2D" unique_id=1975369732]
+collision_layer = 3
+script = ExtResource("1_ekvlj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=268318885]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_p3dby")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=947368130]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_nqmjc")
+
+[node name="HealthComponent" parent="." unique_id=2091267153 instance=ExtResource("3_6oyfb")]
+MAX_HP = 3
+
+[node name="HitboxComponent" parent="." unique_id=806359955 node_paths=PackedStringArray("health_component") instance=ExtResource("4_g8be5")]
+health_component = NodePath("../HealthComponent")
+character_class = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1375180614]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_rs4xq")
+
+[node name="AttackComponent" parent="." unique_id=71310347 instance=ExtResource("5_5acp8")]
+character_class = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1113141945]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_rs4xq")
+
+[node name="RebornTimer" type="Timer" parent="." unique_id=1934397008]
+wait_time = 5.0
+one_shot = true
+
+[node name="shot_timer" type="Timer" parent="." unique_id=755131452]
+wait_time = 1.5
+autostart = true
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]
+[connection signal="timeout" from="RebornTimer" to="." method="_on_reborn_timer_timeout"]
+[connection signal="timeout" from="shot_timer" to="." method="_on_shot_timer_timeout"]

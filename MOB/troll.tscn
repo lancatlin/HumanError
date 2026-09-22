@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cn2ckmjymewo2"]
 
-[ext_resource type="Script" uid="uid://6e1f2ylut54t" path="res://scripts/zombie.gd" id="1_4gx57"]
+[ext_resource type="Script" uid="uid://bogan1i40se7r" path="res://scripts/mob/troll.gd" id="1_y6lvd"]
 [ext_resource type="Texture2D" uid="uid://5nbnm5wwsrne" path="res://assets/0x72_DungeonTilesetII_v1.7/Troll.png" id="2_nj4d8"]
 [ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="2_xepks"]
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="3_4gx57"]
@@ -76,14 +76,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqmjc"]
-size = Vector2(8, 12)
+size = Vector2(19.75, 23.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs4xq"]
-size = Vector2(10, 15)
+size = Vector2(20.75, 26.25)
 
-[node name="Troll" type="CharacterBody2D" unique_id=1975369732]
+[node name="troll" type="CharacterBody2D" unique_id=1975369732]
 collision_layer = 3
-script = ExtResource("1_4gx57")
+script = ExtResource("1_y6lvd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=268318885]
 position = Vector2(0, -7)
@@ -91,7 +91,7 @@ sprite_frames = SubResource("SpriteFrames_p3dby")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=947368130]
-position = Vector2(1, -8)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_nqmjc")
 
 [node name="HealthComponent" parent="." unique_id=2091267153 instance=ExtResource("2_xepks")]
@@ -102,14 +102,14 @@ health_component = NodePath("../HealthComponent")
 character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1375180614]
-position = Vector2(1, -7.5)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_rs4xq")
 
 [node name="AttackComponent" parent="." unique_id=71310347 instance=ExtResource("5_ycv6i")]
 character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1113141945]
-position = Vector2(1, -7.5)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_rs4xq")
 
 [node name="RebornTimer" type="Timer" parent="." unique_id=1934397008]

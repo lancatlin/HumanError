@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cr81o0io1g8yl" path="res://scenes/bow.tscn" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://rvtvif8xtt24" path="res://scenes/hp_bar.tscn" id="4_u5sy4"]
 [ext_resource type="Script" uid="uid://dogix12unluuv" path="res://scripts/arrow_manager.gd" id="5_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://cn2ckmjymewo2" path="res://MOB/Troll.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://cn2ckmjymewo2" path="res://MOB/troll.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://1stlgh38754d" path="res://MOB/devil.tscn" id="7_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cqgnq6deri6o2" path="res://MOB/zombie.tscn" id="8_0tnpc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nqmjc"]
@@ -269,58 +270,22 @@ script = ExtResource("5_u5sy4")
 [node name="MOB_manager" type="Node2D" parent="." unique_id=932954026]
 unique_name_in_owner = true
 
-[node name="Zombie" parent="." unique_id=1975369732 instance=ExtResource("8_0tnpc")]
-position = Vector2(148, 198)
+[node name="Troll" parent="MOB_manager" unique_id=1909978167 instance=ExtResource("6_p57ef")]
+position = Vector2(167, 206)
 
-[node name="Troll" parent="." unique_id=372315484 instance=ExtResource("6_p57ef")]
-position = Vector2(406, 195)
+[node name="Zombie" parent="MOB_manager" unique_id=798003443 instance=ExtResource("8_0tnpc")]
+position = Vector2(290, 228)
 
-[node name="Troll2" parent="." unique_id=803841948 instance=ExtResource("6_p57ef")]
-position = Vector2(74, 238)
+[node name="devil" parent="MOB_manager" unique_id=1975369732 instance=ExtResource("7_0tnpc")]
+position = Vector2(124, 83)
 
-[node name="Zombie" parent="ZombieManager" unique_id=617884653 instance=ExtResource("6_p57ef")]
-position = Vector2(388, 135)
+[node name="devil2" parent="MOB_manager" unique_id=158661845 instance=ExtResource("7_0tnpc")]
+position = Vector2(73, 139)
 
-[node name="Zombie2" parent="ZombieManager" unique_id=1975369732 instance=ExtResource("6_p57ef")]
-position = Vector2(390, 234)
+[node name="devil3" parent="MOB_manager" unique_id=2045242879 instance=ExtResource("7_0tnpc")]
+position = Vector2(198, 101)
 
-[node name="Zombie3" parent="ZombieManager" unique_id=63526586 instance=ExtResource("6_p57ef")]
-position = Vector2(135, 133)
-
-[node name="Zombie4" parent="ZombieManager" unique_id=1040880947 instance=ExtResource("6_p57ef")]
-position = Vector2(138, 261)
-
-[node name="Zombie5" parent="ZombieManager" unique_id=33673306 instance=ExtResource("6_p57ef")]
-position = Vector2(324, 296)
-
-[node name="Zombie6" parent="ZombieManager" unique_id=473255100 instance=ExtResource("6_p57ef")]
-position = Vector2(478, 224)
-
-[node name="Zombie7" parent="ZombieManager" unique_id=432999811 instance=ExtResource("6_p57ef")]
-position = Vector2(473, 291)
-
-[node name="Zombie8" parent="ZombieManager" unique_id=1328587118 instance=ExtResource("6_p57ef")]
-position = Vector2(459, 86)
-
-[node name="Zombie9" parent="ZombieManager" unique_id=1595058300 instance=ExtResource("6_p57ef")]
-position = Vector2(390, 58)
-
-[node name="Zombie10" parent="ZombieManager" unique_id=1612145635 instance=ExtResource("6_p57ef")]
-position = Vector2(270, 53)
-
-[node name="Zombie11" parent="ZombieManager" unique_id=399461590 instance=ExtResource("6_p57ef")]
-position = Vector2(60, 48)
-
-[node name="Zombie12" parent="ZombieManager" unique_id=1303335703 instance=ExtResource("6_p57ef")]
-position = Vector2(82, 157)
-
-[node name="Zombie13" parent="ZombieManager" unique_id=1270189399 instance=ExtResource("6_p57ef")]
-position = Vector2(51, 265)
-
-[node name="Zombie14" parent="ZombieManager" unique_id=1219456419 instance=ExtResource("6_p57ef")]
-position = Vector2(85, 322)
-
-[node name="Zombie15" parent="ZombieManager" unique_id=1621326673 instance=ExtResource("6_p57ef")]
-position = Vector2(170, 318)
+[node name="devil4" parent="MOB_manager" unique_id=1373222116 instance=ExtResource("7_0tnpc")]
+position = Vector2(104, 211)
 
 [connection signal="shoot_arrow" from="Player/Bow" to="ArrowManager" method="_on_bow_shoot_arrow"]

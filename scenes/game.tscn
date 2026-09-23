@@ -8,20 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://cr81o0io1g8yl" path="res://scenes/bow.tscn" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://rvtvif8xtt24" path="res://scenes/hp_bar.tscn" id="4_u5sy4"]
 [ext_resource type="Script" uid="uid://dogix12unluuv" path="res://scripts/arrow_manager.gd" id="5_u5sy4"]
-[ext_resource type="PackedScene" uid="uid://cn2ckmjymewo2" path="res://MOB/troll.tscn" id="6_p57ef"]
-[ext_resource type="PackedScene" uid="uid://1stlgh38754d" path="res://MOB/devil.tscn" id="7_0tnpc"]
-[ext_resource type="PackedScene" uid="uid://cqgnq6deri6o2" path="res://MOB/zombie.tscn" id="8_0tnpc"]
 [ext_resource type="Script" uid="uid://d07wa8sky033r" path="res://scripts/mob_manager.gd" id="9_kvuet"]
 [ext_resource type="PackedScene" uid="uid://11ct4gqmk50w" path="res://scenes/potion.tscn" id="9_trtic"]
-[ext_resource type="PackedScene" uid="uid://dl1n332fu2eg" path="res://MOB/dark_servant.tscn" id="10_vtaks"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nqmjc"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rs4xq"]
 normal = Vector2(1, 0)
+distance = 9.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
 normal = Vector2(-1, 0)
+distance = 12.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gfhpk"]
 normal = Vector2(0, 1)
@@ -620,51 +618,6 @@ position = Vector2(216, 23)
 [node name="MobManager" type="Node2D" parent="." unique_id=932954026]
 unique_name_in_owner = true
 script = ExtResource("9_kvuet")
-
-[node name="Troll" parent="MobManager" unique_id=1909978167 instance=ExtResource("6_p57ef")]
-position = Vector2(164, 278)
-
-[node name="Zombie" parent="MobManager" unique_id=798003443 instance=ExtResource("8_0tnpc")]
-position = Vector2(418, 294)
-
-[node name="devil4" parent="MobManager" unique_id=1373222116 instance=ExtResource("7_0tnpc")]
-position = Vector2(53, 260)
-
-[node name="dark_servant" parent="MobManager" unique_id=916341786 instance=ExtResource("10_vtaks")]
-position = Vector2(154, 188)
-
-[node name="dark_servant2" parent="MobManager" unique_id=88546915 instance=ExtResource("10_vtaks")]
-position = Vector2(238, 291)
-
-[node name="dark_servant3" parent="MobManager" unique_id=474932012 instance=ExtResource("10_vtaks")]
-position = Vector2(390, 119)
-
-[node name="dark_servant4" parent="MobManager" unique_id=1282709389 instance=ExtResource("10_vtaks")]
-position = Vector2(320, 106)
-
-[node name="Zombie2" parent="MobManager" unique_id=1975369732 instance=ExtResource("8_0tnpc")]
-position = Vector2(92, 119)
-
-[node name="Zombie3" parent="MobManager" unique_id=13677873 instance=ExtResource("8_0tnpc")]
-position = Vector2(216, 71)
-
-[node name="Zombie4" parent="MobManager" unique_id=608249521 instance=ExtResource("8_0tnpc")]
-position = Vector2(119, 301)
-
-[node name="Zombie5" parent="MobManager" unique_id=1604554633 instance=ExtResource("8_0tnpc")]
-position = Vector2(196, 156)
-
-[node name="Zombie6" parent="MobManager" unique_id=1430439120 instance=ExtResource("8_0tnpc")]
-position = Vector2(250, 125)
-
-[node name="troll" parent="MobManager" unique_id=1549416623 instance=ExtResource("6_p57ef")]
-position = Vector2(422, 190)
-
-[node name="troll2" parent="MobManager" unique_id=1673805140 instance=ExtResource("6_p57ef")]
-position = Vector2(480, 37)
-
-[node name="troll3" parent="MobManager" unique_id=1295872757 instance=ExtResource("6_p57ef")]
-position = Vector2(479, 307)
 
 [node name="WallLayer" type="TileMapLayer" parent="." unique_id=1927941475]
 tile_map_data = PackedByteArray("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")

@@ -109,7 +109,7 @@ position = Vector2(-4, -3)
 shape = SubResource("RectangleShape2D_rs4xq")
 
 [node name="AttackComponent" parent="." unique_id=71310347 instance=ExtResource("5_56d52")]
-physical_attack = 3.0
+physical_attack = 2.0
 character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1113141945]

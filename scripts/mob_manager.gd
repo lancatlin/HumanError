@@ -2,9 +2,66 @@ extends Node2D
 
 class_name MobManager
 @onready var xp_manager: XPManager = %XPManager
+@onready var player: Player = %Player
+
+
+var level = 0
+
+var mob_count: int = 0
+
+signal change_level(level: int)
+signal victory
+
+
+const ZombieScene: PackedScene = preload("res://MOB/zombie.tscn")
+const TrollScene: PackedScene = preload("res://MOB/troll.tscn")
+const DevilScene: PackedScene = preload("res://MOB/devil.tscn")
+const DarkServantScene: PackedScene = preload("res://MOB/dark_servant.tscn")
+
+const WIDTH = 500
+const HEIGHT = 350
+
+const levels: Array = [
+	{
+		ZombieScene: 6,
+		TrollScene: 2,
+	},
+	{
+		TrollScene: 2,
+		DevilScene: 0,
+		DarkServantScene: 1,
+	},
+	{
+		DevilScene: 2,
+		DarkServantScene: 2,
+	}
+]
 
 func _ready() -> void:
-	for child in get_children():
-		var xp_component = child.get_node("XPComponent")
-		if xp_component:
-			xp_component.connect("add_xp", xp_manager.add_xp)
+	spawn_level()
+
+
+func _on_mob_died(xp: int):
+	mob_count -= 1
+	xp_manager.add_xp(xp)
+	print("Remain:", mob_count)
+	if mob_count == 0:
+		level += 1
+		if level >= levels.size():
+			# Win!
+			victory.emit()
+			get_tree().change_scene_to_file("res://scenes/victory_scene.tscn")
+		else:
+			change_level.emit(level)
+			spawn_level()
+
+func spawn_level():
+	for scene in levels[level]:
+		for i in range(levels[level][scene]):
+			var mob: Node2D = scene.instantiate()
+			mob.global_position.x = randi_range(10, WIDTH)
+			mob.global_position.y = randi_range(10, HEIGHT)
+			mob.player = player
+			mob.get_node("XPComponent").connect("add_xp", _on_mob_died)
+			add_child(mob)
+			mob_count += 1

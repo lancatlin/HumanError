@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
-@onready var player: CharacterBody2D = %Player
+class_name Devil
+
+@export var player: Player
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var reborn_timer: Timer = $RebornTimer
 @onready var health_component: HealthComponent = $HealthComponent

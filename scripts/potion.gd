@@ -6,5 +6,5 @@ extends Area2D
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is HitboxComponent and area.character_class == Types.CharacterClass.Player:
-		area.heal(healing)
-		queue_free()
+		if area.heal(healing):
+			queue_free()

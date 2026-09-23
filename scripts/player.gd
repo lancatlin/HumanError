@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+class_name Player
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
@@ -31,7 +32,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_health_component_died() -> void:
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/you_died.tscn")
 	
 
 

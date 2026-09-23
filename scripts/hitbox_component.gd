@@ -11,7 +11,8 @@ func damage(attack: Attack):
 		health_component.damage(attack)
 
 
-func heal(healing: int):
+func heal(healing: int) -> bool:
 	if health_component:
-		health_component.heal(healing)
+		return health_component.heal(healing)
 	
+	return false

@@ -1,12 +1,12 @@
-[gd_scene format=4 uid="uid://wmvmjomebt5r"]
+[gd_scene format=4 uid="uid://cm3anwscujmdp"]
 
-[ext_resource type="Texture2D" uid="uid://d32qtwurdxa1j" path="res://assets/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="1_bqqt6"]
-[ext_resource type="Script" uid="uid://cbhiqf5h28ajl" path="res://scripts/main_menu.gd" id="1_wu84c"]
-[ext_resource type="Texture2D" uid="uid://diigk61g3mwa" path="res://assets/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="2_wu84c"]
-[ext_resource type="FontFile" uid="uid://b6u0wo3ych6mg" path="res://assets/fonts/karmatic-arcade.regular.ttf" id="3_8ln24"]
+[ext_resource type="Script" uid="uid://ckwll3ci3ar7l" path="res://scripts/victory_scene.gd" id="1_lkccn"]
+[ext_resource type="Texture2D" uid="uid://d32qtwurdxa1j" path="res://assets/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_dwl3t"]
+[ext_resource type="Texture2D" uid="uid://diigk61g3mwa" path="res://assets/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_7f4wk"]
+[ext_resource type="Theme" uid="uid://bubi4luxxurut" path="res://assets/themes/title.tres" id="4_3xacc"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wu84c"]
-texture = ExtResource("1_bqqt6")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkch7"]
+texture = ExtResource("2_dwl3t")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -53,8 +53,8 @@ texture = ExtResource("1_bqqt6")
 4:6/0 = 0
 5:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ln24"]
-texture = ExtResource("2_wu84c")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gqedm"]
+texture = ExtResource("3_7f4wk")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -202,61 +202,34 @@ texture = ExtResource("2_wu84c")
 22:7/0 = 0
 23:7/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_tbmy8"]
-sources/1 = SubResource("TileSetAtlasSource_wu84c")
-sources/2 = SubResource("TileSetAtlasSource_8ln24")
+[sub_resource type="TileSet" id="TileSet_8rdr3"]
+sources/1 = SubResource("TileSetAtlasSource_tkch7")
+sources/2 = SubResource("TileSetAtlasSource_gqedm")
 
-[sub_resource type="Theme" id="Theme_nqmjc"]
-default_font = ExtResource("3_8ln24")
-default_font_size = 16
+[node name="VictoryScene" type="Node2D" unique_id=1876699006]
+script = ExtResource("1_lkccn")
 
-[node name="MainMenu" type="Node2D" unique_id=220777466]
-script = ExtResource("1_wu84c")
-
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=489740035]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2004818562]
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAEAAAABAAAAAQABAAAAAAABAAEAAQABAAEAAAACAAAAAQACAAAAAAACAAEAAQACAAEAAAADAAAAAQAAAAAAAAADAAEAAQAAAAEAAAAEAAAAAQABAAAAAAAEAAEAAQABAAEAAAAFAAAAAQACAAAAAAAFAAEAAQACAAEAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAEAAAABAAIAAQABAAAAAAABAAMAAQABAAEAAAACAAIAAQACAAAAAAACAAMAAQACAAEAAAADAAIAAQAAAAAAAAADAAMAAQAAAAEAAAAEAAIAAQABAAAAAAAEAAMAAQABAAEAAAAFAAIAAQACAAAAAAAFAAMAAQACAAEAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAEAAAAHAAAAAQABAAAAAAAHAAEAAQABAAEAAAAIAAAAAQACAAAAAAAIAAEAAQACAAEAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAEAAAAHAAIAAQABAAAAAAAHAAMAAQABAAEAAAAIAAIAAQACAAAAAAAIAAMAAQACAAEAAAAGAAQAAQAAAAAAAAAGAAUAAQAAAAEAAAAHAAQAAQABAAAAAAAHAAUAAQABAAEAAAAIAAQAAQACAAAAAAAIAAUAAQACAAEAAAADAAQAAQAAAAAAAAADAAUAAQAAAAEAAAAEAAQAAQABAAAAAAAEAAUAAQABAAEAAAAFAAQAAQACAAAAAAAFAAUAAQACAAEAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAEAAAABAAQAAQABAAAAAAABAAUAAQABAAEAAAACAAQAAQACAAAAAAACAAUAAQACAAEAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAEAAAABAAYAAQABAAAAAAABAAcAAQABAAEAAAACAAYAAQACAAAAAAACAAcAAQACAAEAAAADAAYAAQAAAAAAAAADAAcAAQAAAAEAAAAEAAYAAQABAAAAAAAEAAcAAQABAAEAAAAFAAYAAQACAAAAAAAFAAcAAQACAAEAAAAGAAYAAQAAAAAAAAAGAAcAAQAAAAEAAAAHAAYAAQABAAAAAAAHAAcAAQABAAEAAAAIAAYAAQACAAAAAAAIAAcAAQACAAEAAAAGAAgAAQAAAAAAAAAGAAkAAQAAAAEAAAAHAAgAAQABAAAAAAAHAAkAAQABAAEAAAAIAAgAAQACAAAAAAAIAAkAAQACAAEAAAADAAgAAQAAAAAAAAADAAkAAQAAAAEAAAAEAAgAAQABAAAAAAAEAAkAAQABAAEAAAAFAAgAAQACAAAAAAAFAAkAAQACAAEAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAEAAAABAAgAAQABAAAAAAABAAkAAQABAAEAAAACAAgAAQACAAAAAAACAAkAAQACAAEAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAEAAAAKAAgAAQABAAAAAAAKAAkAAQABAAEAAAALAAgAAQACAAAAAAALAAkAAQACAAEAAAAJAAYAAQAAAAAAAAAJAAcAAQAAAAEAAAAKAAYAAQABAAAAAAAKAAcAAQABAAEAAAALAAYAAQACAAAAAAALAAcAAQACAAEAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAEAAAAKAAQAAQABAAAAAAAKAAUAAQABAAEAAAALAAQAAQACAAAAAAALAAUAAQACAAEAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAEAAAAKAAIAAQABAAAAAAAKAAMAAQABAAEAAAALAAIAAQACAAAAAAALAAMAAQACAAEAAAAJAAAAAQAAAAAAAAAJAAEAAQAAAAEAAAAKAAAAAQABAAAAAAAKAAEAAQABAAEAAAALAAAAAQACAAAAAAALAAEAAQACAAEAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAEAAAANAAAAAQABAAAAAAANAAEAAQABAAEAAAAOAAAAAQACAAAAAAAOAAEAAQACAAEAAAAMAAIAAQAAAAAAAAAMAAMAAQAAAAEAAAANAAIAAQABAAAAAAANAAMAAQABAAEAAAAOAAIAAQACAAAAAAAOAAMAAQACAAEAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAEAAAANAAQAAQABAAAAAAANAAUAAQABAAEAAAAOAAQAAQACAAAAAAAOAAUAAQACAAEAAAAMAAYAAQAAAAAAAAAMAAcAAQAAAAEAAAANAAYAAQABAAAAAAANAAcAAQABAAEAAAAOAAYAAQACAAAAAAAOAAcAAQACAAEAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAEAAAANAAgAAQABAAAAAAANAAkAAQABAAEAAAAOAAgAAQACAAAAAAAOAAkAAQACAAEAAAAPAAgAAQAAAAAAAAAPAAkAAQAAAAEAAAAQAAgAAQABAAAAAAAQAAkAAQABAAEAAAARAAgAAQACAAAAAAARAAkAAQACAAEAAAAPAAYAAQAAAAAAAAAPAAcAAQAAAAEAAAAQAAYAAQABAAAAAAAQAAcAAQABAAEAAAARAAYAAQACAAAAAAARAAcAAQACAAEAAAAPAAQAAQAAAAAAAAAPAAUAAQAAAAEAAAAQAAQAAQABAAAAAAAQAAUAAQABAAEAAAARAAQAAQACAAAAAAARAAUAAQACAAEAAAAPAAIAAQAAAAAAAAAPAAMAAQAAAAEAAAAQAAIAAQABAAAAAAAQAAMAAQABAAEAAAARAAIAAQACAAAAAAARAAMAAQACAAEAAAAPAAAAAQAAAAAAAAAPAAEAAQAAAAEAAAAQAAAAAQABAAAAAAAQAAEAAQABAAEAAAARAAAAAQACAAAAAAARAAEAAQACAAEAAAA=")
-tile_set = SubResource("TileSet_tbmy8")
+tile_set = SubResource("TileSet_8rdr3")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1606684423]
-offset_left = 19.0
-offset_top = 28.0
-offset_right = 276.0
-offset_bottom = 81.0
-theme_override_fonts/normal_font = ExtResource("3_8ln24")
-theme_override_font_sizes/normal_font_size = 32
-text = "Fire Wheel"
-fit_content = true
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1882206667]
-position = Vector2(144, 81)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1507682288]
+position = Vector2(143, 82)
 zoom = Vector2(4, 4)
 
-[node name="FmodListener2D" type="FmodListener2D" parent="Camera2D" unique_id=430297386]
-position = Vector2(-145, -83)
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1173949870]
+offset_right = 287.0
+offset_bottom = 163.0
 
-[node name="StartButton" type="Button" parent="." unique_id=1808937875]
-offset_left = 63.0
-offset_top = 101.0
-offset_right = 138.0
-offset_bottom = 128.0
-theme = SubResource("Theme_nqmjc")
-text = "Start"
+[node name="Label" type="Label" parent="CenterContainer" unique_id=445826428]
+layout_mode = 2
+theme = ExtResource("4_3xacc")
+theme_override_font_sizes/font_size = 32
+text = "Victory"
 
-[node name="QuitButton" type="Button" parent="." unique_id=661789447]
-offset_left = 153.0
-offset_top = 100.0
-offset_right = 228.0
-offset_bottom = 127.0
-theme = SubResource("Theme_nqmjc")
-text = "Quit"
+[node name="Timer" type="Timer" parent="." unique_id=1989510191]
+wait_time = 4.0
+one_shot = true
+autostart = true
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1225542221]
-event_name = "event:/Title"
-event_guid = "{de0972ac-3da8-44d8-a688-87d873d8c1b5}"
-autoplay = true
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=2114716982]
-bank_paths = ["res://assets/fmod/firewheel/Build/Desktop/Master.bank"]
-
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

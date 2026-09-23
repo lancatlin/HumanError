@@ -17,6 +17,7 @@ const ZombieScene: PackedScene = preload("res://MOB/zombie.tscn")
 const TrollScene: PackedScene = preload("res://MOB/troll.tscn")
 const DevilScene: PackedScene = preload("res://MOB/devil.tscn")
 const DarkServantScene: PackedScene = preload("res://MOB/dark_servant.tscn")
+const DarkWizardScene: PackedScene = preload("res://boss/dark_wizerd.tscn")
 
 const WIDTH = 500
 const HEIGHT = 350
@@ -34,6 +35,9 @@ const levels: Array = [
 	{
 		DevilScene: 2,
 		DarkServantScene: 2,
+	},
+	{
+		# empty, only generates Boss
 	}
 ]
 
@@ -65,3 +69,11 @@ func spawn_level():
 			mob.get_node("XPComponent").connect("add_xp", _on_mob_died)
 			add_child(mob)
 			mob_count += 1
+	if level == levels.size() - 1:
+		var boss = DarkWizardScene.instantiate()
+		boss.global_position.x = 20
+		boss.global_position.y = 170
+		boss.player = player
+		boss.get_node("XPComponent").connect("add_xp", _on_mob_died)
+		add_child(boss)
+		mob_count += 1

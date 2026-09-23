@@ -259,5 +259,4 @@ autoplay = true
 bank_paths = ["res://assets/fmod/firewheel/Build/Desktop/Master.bank"]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

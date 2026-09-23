@@ -2,13 +2,13 @@ extends Node2D
 
 class_name HealthComponent
 
-@export var MAX_HP = 10
+@export var MAX_HP: float = 10.0
 
-var hp = MAX_HP
+var hp: float = MAX_HP
 var alive = true
 
 
-signal health_changed(current: int, change: int, max: int)
+signal health_changed(current: float, change: float, max: float)
 signal hurted  
 signal died
 
@@ -29,9 +29,9 @@ func reset():
 	hp = MAX_HP
 	health_changed.emit(hp, MAX_HP)
 
-func heal(healing: int) -> bool:
+func heal(healing: float) -> bool:
 	if hp < MAX_HP:
-		hp += healing
+		hp = min(hp + healing, MAX_HP)
 		health_changed.emit(hp, healing, MAX_HP)
 		return true
 		

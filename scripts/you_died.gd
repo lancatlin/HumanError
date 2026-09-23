@@ -12,7 +12,7 @@ func _ready() -> void:
 	var tween := create_tween()
 	tween.tween_property(label, "modulate:a", 1.0, 1.5)
 	tween.tween_interval(2.0)
-	tween.tween_callback(_go_to_main_menu)
+	#tween.tween_callback(_go_to_main_menu)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -25,3 +25,7 @@ func _go_to_main_menu() -> void:
 		return
 	done = true
 	get_tree().change_scene_to_file(MAIN_MENU)
+
+
+func _on_audio_stream_player_2d_finished() -> void:
+	_go_to_main_menu()

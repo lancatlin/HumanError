@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d32qtwurdxa1j" path="res://assets/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_dwl3t"]
 [ext_resource type="Texture2D" uid="uid://diigk61g3mwa" path="res://assets/0x72_DungeonTilesetII_v1.7/atlas_walls_high-16x32.png" id="3_7f4wk"]
 [ext_resource type="Theme" uid="uid://bubi4luxxurut" path="res://assets/themes/title.tres" id="4_3xacc"]
+[ext_resource type="AudioStream" uid="uid://geht4pry2bsq" path="res://assets/sound/victory.wav" id="5_dwl3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkch7"]
 texture = ExtResource("2_dwl3t")
@@ -227,9 +228,10 @@ theme = ExtResource("4_3xacc")
 theme_override_font_sizes/font_size = 32
 text = "Victory"
 
-[node name="Timer" type="Timer" parent="." unique_id=1989510191]
-wait_time = 4.0
-one_shot = true
-autostart = true
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=851238039]
+stream = ExtResource("5_dwl3t")
+autoplay = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1122461360]
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

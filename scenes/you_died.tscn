@@ -1,9 +1,10 @@
-[gd_scene format=4 uid="uid://c7m5s1p0g8w4x"]
+[gd_scene format=3 uid="uid://dd6v8vi8fj3v6"]
 
-[ext_resource type="Script" uid="uid://b2q4l0n9f3k7m" path="res://scripts/you_died.gd" id="1_died"]
+[ext_resource type="Script" uid="uid://b2q4l0oaf3k7m" path="res://scripts/you_died.gd" id="1_died"]
 [ext_resource type="FontFile" uid="uid://b6u0wo3ych6mg" path="res://assets/fonts/karmatic-arcade.regular.ttf" id="2_font"]
+[ext_resource type="AudioStream" uid="uid://dft0117gwkcf3" path="res://assets/sound/game-over.wav" id="3_k4bmk"]
 
-[node name="YouDied" type="Control"]
+[node name="YouDied" type="Control" unique_id=360915141]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_died")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=535372460]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=166108403]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,7 +30,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="Label" type="Label" parent="CenterContainer" unique_id=1620009838]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.65, 0.05, 0.05, 1)
 theme_override_fonts/font = ExtResource("2_font")
@@ -37,3 +38,12 @@ theme_override_font_sizes/font_size = 64
 text = "YOU DIED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=334086775]
+stream = ExtResource("3_k4bmk")
+autoplay = true
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=397113773]
+position = Vector2(558, 344)
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

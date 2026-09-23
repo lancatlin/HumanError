@@ -5,6 +5,7 @@ class_name Player
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _physics_process(delta: float) -> void:
@@ -38,7 +39,8 @@ func _on_health_component_died() -> void:
 
 func _on_health_component_health_changed(current: int, changed: int, max: int) -> void:
 	if changed < 0:
-		pass
+		audio_stream_player_2d.play()
+
 	print("HP: %d/%d" % [current, max])
 
 @onready var shot_sound: AudioStreamPlayer2D = $shot_sound

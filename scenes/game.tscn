@@ -539,8 +539,9 @@ event_name = "event:/Fight"
 event_guid = "{e0541313-afdf-4e9f-a6c5-d15a332752ac}"
 autoplay = true
 fmod_parameters/Intensity/id = -5362718028921562221
-fmod_parameters/Intensity = 0
+fmod_parameters/Intensity = 0.0
 fmod_parameters/Intensity/variant_type = 2
+unique_name_in_owner = true
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=74298780]
 bank_paths = ["res://assets/fmod/firewheel/Build/Desktop/Master.bank"]

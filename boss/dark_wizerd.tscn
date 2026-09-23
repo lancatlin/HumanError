@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dv3vebrfcs2s3" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard6.png" id="7_noxdd"]
 [ext_resource type="Texture2D" uid="uid://cspir7wavfljg" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard7.png" id="8_n4xvj"]
 [ext_resource type="Texture2D" uid="uid://d3gaktshej1a3" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard8.png" id="9_mw78r"]
-[ext_resource type="Texture2D" uid="uid://kxoj8unonusx" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/stuff.png" id="14_fyvjj"]
+[ext_resource type="Texture2D" uid="uid://oltkvatu3vgx" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/17.png" id="14_fyvjj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3dby"]
 animations = [{
@@ -101,16 +101,16 @@ xp = 3
 health_component = NodePath("../HealthComponent")
 
 [node name="staff" type="Node2D" parent="." unique_id=1454641508]
-position = Vector2(101, 20)
+position = Vector2(17, 4)
 
 [node name="stafftexture" type="Sprite2D" parent="staff" unique_id=2014317669]
-position = Vector2(-85, -28)
-rotation = -1.5707964
-scale = Vector2(0.2631579, 0.25438598)
+position = Vector2(0, -17.000008)
+rotation = -0.7853982
+scale = Vector2(1.7968539, 1.7834796)
 texture = ExtResource("14_fyvjj")
 
 [node name="ball_spone" type="Marker2D" parent="staff" unique_id=2014698272]
-position = Vector2(0, -36)
+position = Vector2(0, -37)
 
 [node name="diverge_timer" type="Timer" parent="staff" unique_id=1413793369]
 wait_time = 5.0

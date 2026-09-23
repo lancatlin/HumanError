@@ -1,34 +1,34 @@
 [gd_scene format=3 uid="uid://b3kftm481hmy7"]
 
-[ext_resource type="Script" uid="uid://caraat46x2gce" path="res://scripts/mob/dark_servant.gd" id="1_g5u4x"]
-[ext_resource type="Texture2D" uid="uid://dto1n6bwkavtq" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/walk/frame.000.png" id="2_xgv1k"]
-[ext_resource type="Texture2D" uid="uid://bsdmiotalt18t" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/walk/frame.001.png" id="3_3tufi"]
-[ext_resource type="Texture2D" uid="uid://c3ydwj05ynuxi" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/idle/frame.000.png" id="3_as5f4"]
+[ext_resource type="Script" uid="uid://b6et5gufq2buu" path="res://scripts/dark_wizerd.gd" id="1_fyvjj"]
+[ext_resource type="Texture2D" uid="uid://d0xpjsj3xksdh" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Running/Wizard1.png" id="2_fyvjj"]
+[ext_resource type="Texture2D" uid="uid://cwl73sxbd1hk" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Running/Wizard2.png" id="3_j7xbi"]
 [ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="3_x4hlj"]
-[ext_resource type="Texture2D" uid="uid://b8ml5jh8erxse" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/idle/frame.001.png" id="4_a65is"]
+[ext_resource type="Texture2D" uid="uid://43gh4en2id7x" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Running/Wizard3.png" id="4_35swq"]
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="4_m2ni2"]
-[ext_resource type="Texture2D" uid="uid://c8wx1al01xkd" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/walk/frame.002.png" id="4_q21qc"]
 [ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="5_as5f4"]
-[ext_resource type="Texture2D" uid="uid://dfgjqgrnalwt5" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/idle/frame.002.png" id="5_kbsfd"]
-[ext_resource type="Texture2D" uid="uid://cbabxbmppxm4r" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/walk/frame.003.png" id="5_wey8u"]
+[ext_resource type="Texture2D" uid="uid://7qr40gdh7fqb" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Running/Wizard4.png" id="5_fnvi1"]
 [ext_resource type="PackedScene" uid="uid://bhyngk6o4lfwv" path="res://scenes/xp_component.tscn" id="6_a65is"]
-[ext_resource type="Texture2D" uid="uid://b2daanmtps2ll" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/idle/frame.003.png" id="6_xgv1k"]
+[ext_resource type="Texture2D" uid="uid://3m8l6hlx0gc4" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard5.png" id="6_idm72"]
+[ext_resource type="Texture2D" uid="uid://dv3vebrfcs2s3" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard6.png" id="7_noxdd"]
+[ext_resource type="Texture2D" uid="uid://cspir7wavfljg" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard7.png" id="8_n4xvj"]
+[ext_resource type="Texture2D" uid="uid://d3gaktshej1a3" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard8.png" id="9_mw78r"]
 [ext_resource type="Texture2D" uid="uid://kxoj8unonusx" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/stuff.png" id="14_fyvjj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3dby"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_xgv1k")
+"texture": ExtResource("2_fyvjj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_3tufi")
+"texture": ExtResource("3_j7xbi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_q21qc")
+"texture": ExtResource("4_35swq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_wey8u")
+"texture": ExtResource("5_fnvi1")
 }],
 "loop": 1,
 "name": &"chase",
@@ -36,16 +36,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_as5f4")
+"texture": ExtResource("6_idm72")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_a65is")
+"texture": ExtResource("7_noxdd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_kbsfd")
+"texture": ExtResource("8_n4xvj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_xgv1k")
+"texture": ExtResource("9_mw78r")
 }],
 "loop": 1,
 "name": &"idle",
@@ -53,23 +53,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqmjc"]
-size = Vector2(52.5, 69.48047)
+size = Vector2(40.625, 57.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs4xq"]
-size = Vector2(53.60547, 69.13281)
+size = Vector2(40.802734, 57.283203)
 
 [node name="dark_wizerd" type="CharacterBody2D" unique_id=1975369732]
 collision_layer = 3
-script = ExtResource("1_g5u4x")
+script = ExtResource("1_fyvjj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=268318885]
-position = Vector2(0, -7)
-scale = Vector2(0.35, 0.35)
+scale = Vector2(1.9, 1.9)
 sprite_frames = SubResource("SpriteFrames_p3dby")
-animation = &"chase"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=947368130]
-position = Vector2(0.75, -8.259766)
+position = Vector2(-2.3125, 2.75)
 shape = SubResource("RectangleShape2D_nqmjc")
 
 [node name="HealthComponent" parent="." unique_id=2091267153 instance=ExtResource("3_x4hlj")]
@@ -80,14 +79,14 @@ health_component = NodePath("../HealthComponent")
 character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1375180614]
-position = Vector2(1, -8)
+position = Vector2(-2, 3)
 shape = SubResource("RectangleShape2D_rs4xq")
 
 [node name="AttackComponent" parent="." unique_id=71310347 instance=ExtResource("5_as5f4")]
 character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1113141945]
-position = Vector2(0.19726563, -8.433594)
+position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_rs4xq")
 
 [node name="RebornTimer" type="Timer" parent="." unique_id=1934397008]
@@ -102,10 +101,10 @@ xp = 3
 health_component = NodePath("../HealthComponent")
 
 [node name="staff" type="Node2D" parent="." unique_id=1454641508]
-position = Vector2(22, -1)
+position = Vector2(101, 20)
 
 [node name="stafftexture" type="Sprite2D" parent="staff" unique_id=2014317669]
-position = Vector2(1.5258789e-05, -17.999996)
+position = Vector2(-85, -28)
 rotation = -1.5707964
 scale = Vector2(0.2631579, 0.25438598)
 texture = ExtResource("14_fyvjj")

@@ -10,7 +10,10 @@
 [ext_resource type="Script" uid="uid://dogix12unluuv" path="res://scripts/arrow_manager.gd" id="5_u5sy4"]
 [ext_resource type="Script" uid="uid://d07wa8sky033r" path="res://scripts/mob_manager.gd" id="9_kvuet"]
 [ext_resource type="PackedScene" uid="uid://11ct4gqmk50w" path="res://scenes/potion.tscn" id="9_trtic"]
+[ext_resource type="PackedScene" uid="uid://cqgnq6deri6o2" path="res://MOB/zombie.tscn" id="11_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://dl1n332fu2eg" path="res://MOB/dark_servant.tscn" id="12_dinhu"]
+[ext_resource type="PackedScene" uid="uid://1stlgh38754d" path="res://MOB/devil.tscn" id="13_ir15t"]
+[ext_resource type="PackedScene" uid="uid://cn2ckmjymewo2" path="res://MOB/troll.tscn" id="14_ca42v"]
 [ext_resource type="PackedScene" uid="uid://b3kftm481hmy7" path="res://boss/dark_wizerd.tscn" id="15_ir15t"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nqmjc"]
@@ -313,10 +316,19 @@ position = Vector2(216, 23)
 unique_name_in_owner = true
 script = ExtResource("9_kvuet")
 
-[node name="dark_wizerd" parent="." unique_id=1442917836 instance=ExtResource("15_ir15t")]
-position = Vector2(91, 171)
+[node name="Zombie" parent="." unique_id=1975369732 instance=ExtResource("11_kvpfn")]
+position = Vector2(151, 190)
 
-[node name="dark_servant" parent="." unique_id=1975369732 instance=ExtResource("12_dinhu")]
-position = Vector2(202, 243)
+[node name="dark_servant" parent="." unique_id=484848184 instance=ExtResource("12_dinhu")]
+position = Vector2(169, 262)
+
+[node name="devil" parent="." unique_id=1027220367 instance=ExtResource("13_ir15t")]
+position = Vector2(162, 109)
+
+[node name="troll" parent="." unique_id=526761403 instance=ExtResource("14_ca42v")]
+position = Vector2(241, 291)
+
+[node name="dark_wizerd" parent="." unique_id=1593537399 instance=ExtResource("15_ir15t")]
+position = Vector2(425, 265)
 
 [connection signal="shoot_arrow" from="Player/Bow" to="ArrowManager" method="_on_bow_shoot_arrow"]

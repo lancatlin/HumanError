@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cspir7wavfljg" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard7.png" id="8_n4xvj"]
 [ext_resource type="Texture2D" uid="uid://d3gaktshej1a3" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard8.png" id="9_mw78r"]
 [ext_resource type="Texture2D" uid="uid://oltkvatu3vgx" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/17.png" id="14_fyvjj"]
+[ext_resource type="AudioStream" uid="uid://d3b5bhotg4t8k" path="res://assets/sound/mob_hit.wav" id="15_j7xbi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p3dby"]
 animations = [{
@@ -115,6 +116,10 @@ position = Vector2(0, -37)
 [node name="diverge_timer" type="Timer" parent="staff" unique_id=1413793369]
 wait_time = 5.0
 autostart = true
+
+[node name="mob_hurt_sound" type="AudioStreamPlayer2D" parent="." unique_id=2137041696]
+stream = ExtResource("15_j7xbi")
+volume_db = 5.0
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]

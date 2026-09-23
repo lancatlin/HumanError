@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="4_g8be5"]
 [ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="5_5acp8"]
 [ext_resource type="PackedScene" uid="uid://bhyngk6o4lfwv" path="res://scenes/xp_component.tscn" id="6_7tayp"]
+[ext_resource type="AudioStream" uid="uid://d3b5bhotg4t8k" path="res://assets/sound/mob_hit.wav" id="7_6oyfb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tayp"]
 atlas = ExtResource("2_ekvlj")
@@ -124,6 +125,10 @@ autostart = true
 [node name="XPComponent" parent="." unique_id=1509878037 node_paths=PackedStringArray("health_component") instance=ExtResource("6_7tayp")]
 xp = 3
 health_component = NodePath("../HealthComponent")
+
+[node name="mob_hurt_sound" type="AudioStreamPlayer2D" parent="." unique_id=1465083052]
+stream = ExtResource("7_6oyfb")
+volume_db = 5.0
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]

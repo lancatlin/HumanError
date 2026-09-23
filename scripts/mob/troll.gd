@@ -36,8 +36,15 @@ func _on_health_component_died() -> void:
 func _on_reborn_timer_timeout() -> void:
 	pass
 
-#-------------------- hurted animation-------------------------
+
+#------hurt sound--------
+@onready var mob_hurt_sound: AudioStreamPlayer2D = $mob_hurt_sound
+#------------------------
+
+#--------hurt-----
 func _on_health_component_hurted() -> void:
+	mob_hurt_sound.play()
 	animated_sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	animated_sprite.modulate = Color.WHITE
+	

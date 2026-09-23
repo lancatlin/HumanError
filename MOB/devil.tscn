@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b80hcbwkjdtpt" path="res://assets/0x72_DungeonTilesetII_v1.7/devil.png" id="3_ww6c3"]
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="4_leps7"]
 [ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="5_56d52"]
+[ext_resource type="PackedScene" uid="uid://bhyngk6o4lfwv" path="res://scenes/xp_component.tscn" id="6_ww6c3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mqn8y"]
 atlas = ExtResource("3_ww6c3")
@@ -118,6 +119,10 @@ shape = SubResource("RectangleShape2D_rs4xq")
 [node name="RebornTimer" type="Timer" parent="." unique_id=1934397008]
 wait_time = 5.0
 one_shot = true
+
+[node name="XPComponent" parent="." unique_id=1509878037 node_paths=PackedStringArray("health_component") instance=ExtResource("6_ww6c3")]
+xp = 2
+health_component = NodePath("../HealthComponent")
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]

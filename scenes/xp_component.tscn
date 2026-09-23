@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bhyngk6o4lfwv"]
+
+[ext_resource type="Script" uid="uid://cjm54nbo3ka6" path="res://scripts/xp_component.gd" id="1_fhf5g"]
+
+[node name="XPComponent" type="Node2D" unique_id=1509878037 node_paths=PackedStringArray("health_component")]
+script = ExtResource("1_fhf5g")
+health_component = NodePath("")

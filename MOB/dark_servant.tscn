@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="3_6oyfb"]
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="4_g8be5"]
 [ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="5_5acp8"]
+[ext_resource type="PackedScene" uid="uid://bhyngk6o4lfwv" path="res://scenes/xp_component.tscn" id="6_7tayp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7tayp"]
 atlas = ExtResource("2_ekvlj")
@@ -119,6 +120,10 @@ one_shot = true
 [node name="shot_timer" type="Timer" parent="." unique_id=755131452]
 wait_time = 1.5
 autostart = true
+
+[node name="XPComponent" parent="." unique_id=1509878037 node_paths=PackedStringArray("health_component") instance=ExtResource("6_7tayp")]
+xp = 3
+health_component = NodePath("../HealthComponent")
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]

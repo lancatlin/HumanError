@@ -5,6 +5,8 @@ class_name HealthComponent
 @export var MAX_HP = 10
 
 var hp = MAX_HP
+var alive = true
+
 
 signal health_changed(current: int, change: int, max: int)
 signal hurted  
@@ -19,7 +21,8 @@ func damage(attack: Attack):
 	
 	hurted.emit()
 	health_changed.emit(hp, -attack.get_physical(), MAX_HP)
-	if hp <= 0:
+	if hp <= 0 and alive:
+		alive = false
 		died.emit()
 	
 func reset():

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="2_xepks"]
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="3_4gx57"]
 [ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="5_ycv6i"]
+[ext_resource type="PackedScene" uid="uid://bhyngk6o4lfwv" path="res://scenes/xp_component.tscn" id="6_cu2cy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0345m"]
 atlas = ExtResource("2_nj4d8")
@@ -115,6 +116,10 @@ shape = SubResource("RectangleShape2D_rs4xq")
 [node name="RebornTimer" type="Timer" parent="." unique_id=1934397008]
 wait_time = 5.0
 one_shot = true
+
+[node name="XPComponent" parent="." unique_id=1509878037 node_paths=PackedStringArray("health_component") instance=ExtResource("6_cu2cy")]
+xp = 2
+health_component = NodePath("../HealthComponent")
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]

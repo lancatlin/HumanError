@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bubi4luxxurut"]
+
+[ext_resource type="FontFile" uid="uid://b6u0wo3ych6mg" path="res://assets/fonts/karmatic-arcade.regular.ttf" id="1_wpiup"]
+
+[resource]
+default_font = ExtResource("1_wpiup")
+default_font_size = 16

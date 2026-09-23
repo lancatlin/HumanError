@@ -41,6 +41,7 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=334086775]
 stream = ExtResource("3_k4bmk")
+volume_db = -6.303
 autoplay = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=397113773]

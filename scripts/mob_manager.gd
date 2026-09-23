@@ -3,6 +3,7 @@ extends Node2D
 class_name MobManager
 @onready var xp_manager: XPManager = %XPManager
 @onready var player: Player = %Player
+@onready var boss_health_bar: BossHealthBar = %BossHealthBar
 
 
 var level = 0
@@ -23,25 +24,26 @@ const WIDTH = 500
 const HEIGHT = 350
 
 const levels: Array = [
-	{
-		ZombieScene: 6,
-		TrollScene: 2,
-	},
-	{
-		TrollScene: 2,
-		DevilScene: 0,
-		DarkServantScene: 1,
-	},
-	{
-		DevilScene: 2,
-		DarkServantScene: 2,
-	},
+	#{
+		#ZombieScene: 6,
+		#TrollScene: 2,
+	#},
+	#{
+		#TrollScene: 2,
+		#DevilScene: 0,
+		#DarkServantScene: 1,
+	#},
+	#{
+		#DevilScene: 2,
+		#DarkServantScene: 2,
+	#},
 	{
 		# empty, only generates Boss
 	}
 ]
 
 func _ready() -> void:
+	#boss_health_bar.hide()
 	spawn_level()
 
 
@@ -70,6 +72,7 @@ func spawn_level():
 			add_child(mob)
 			mob_count += 1
 	if level == levels.size() - 1:
+		# Spawn Boss
 		var boss = DarkWizardScene.instantiate()
 		boss.global_position.x = 20
 		boss.global_position.y = 170
@@ -77,3 +80,4 @@ func spawn_level():
 		boss.get_node("XPComponent").connect("add_xp", _on_mob_died)
 		add_child(boss)
 		mob_count += 1
+		boss_health_bar.setup(boss.get_node("HealthComponent"), "Dark Wizard")

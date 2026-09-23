@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://qicrifu1r6w1"]
+
+[ext_resource type="Script" uid="uid://dtaf4jsgg0mhy" path="res://scripts/boss_health_bar.gd" id="1_exm5q"]
+[ext_resource type="Theme" uid="uid://bubi4luxxurut" path="res://assets/themes/title.tres" id="2_xra7h"]
+
+[node name="BossHealthBar" type="Node2D" unique_id=469560503]
+script = ExtResource("1_exm5q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=190142991]
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 261.0
+offset_bottom = 2.0
+color = Color(0.76, 0, 0, 1)
+
+[node name="Name" type="Label" parent="." unique_id=1968228894]
+offset_left = 5.0
+offset_top = -17.0
+offset_right = 74.0
+offset_bottom = -7.0
+theme = ExtResource("2_xra7h")
+theme_override_font_sizes/font_size = 8
+text = "Dark Wizard"
+
+[node name="HP" type="Label" parent="." unique_id=500547526]
+offset_left = 245.0
+offset_top = -17.0
+offset_right = 258.0
+offset_bottom = -7.0
+theme = ExtResource("2_xra7h")
+theme_override_font_sizes/font_size = 8
+text = "13"

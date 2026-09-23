@@ -230,6 +230,7 @@ text = "Victory"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=851238039]
 stream = ExtResource("5_dwl3t")
+volume_db = -7.703
 autoplay = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1122461360]

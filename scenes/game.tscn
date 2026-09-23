@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cr81o0io1g8yl" path="res://scenes/bow.tscn" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://rvtvif8xtt24" path="res://scenes/hp_bar.tscn" id="4_u5sy4"]
 [ext_resource type="Script" uid="uid://dogix12unluuv" path="res://scripts/arrow_manager.gd" id="5_u5sy4"]
+[ext_resource type="Script" uid="uid://fwgois2c5xvp" path="res://scripts/collectible_manager.gd" id="9_kvpfn"]
 [ext_resource type="Script" uid="uid://d07wa8sky033r" path="res://scripts/mob_manager.gd" id="9_kvuet"]
-[ext_resource type="PackedScene" uid="uid://11ct4gqmk50w" path="res://scenes/potion.tscn" id="9_trtic"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nqmjc"]
 
@@ -604,16 +604,8 @@ unique_name_in_owner = true
 script = ExtResource("5_u5sy4")
 
 [node name="CollectibleManager" type="Node2D" parent="." unique_id=441084873]
-position = Vector2(158, 198)
-
-[node name="Potion" parent="CollectibleManager" unique_id=987243906 instance=ExtResource("9_trtic")]
-position = Vector2(-16, 35)
-
-[node name="Potion2" parent="CollectibleManager" unique_id=645132550 instance=ExtResource("9_trtic")]
-position = Vector2(144, 81)
-
-[node name="Potion3" parent="CollectibleManager" unique_id=595588465 instance=ExtResource("9_trtic")]
-position = Vector2(216, 23)
+position = Vector2(1, 0)
+script = ExtResource("9_kvpfn")
 
 [node name="MobManager" type="Node2D" parent="." unique_id=932954026]
 unique_name_in_owner = true

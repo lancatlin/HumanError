@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dyry0fad2yia6"]
+[gd_scene format=4 uid="uid://cm3anwscujmdp"]
 
 [ext_resource type="Script" uid="uid://ckwll3ci3ar7l" path="res://scripts/victory_scene.gd" id="1_lkccn"]
 [ext_resource type="Texture2D" uid="uid://d32qtwurdxa1j" path="res://assets/0x72_DungeonTilesetII_v1.7/atlas_floor-16x16.png" id="2_dwl3t"]

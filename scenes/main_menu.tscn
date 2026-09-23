@@ -235,18 +235,18 @@ zoom = Vector2(4, 4)
 position = Vector2(-145, -83)
 
 [node name="StartButton" type="Button" parent="." unique_id=1808937875]
-offset_left = 63.0
-offset_top = 101.0
-offset_right = 138.0
-offset_bottom = 128.0
+offset_left = 104.0
+offset_top = 98.0
+offset_right = 179.0
+offset_bottom = 125.0
 theme = SubResource("Theme_nqmjc")
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="." unique_id=661789447]
-offset_left = 153.0
-offset_top = 100.0
-offset_right = 228.0
-offset_bottom = 127.0
+offset_left = 14.0
+offset_top = 98.0
+offset_right = 89.0
+offset_bottom = 125.0
 theme = SubResource("Theme_nqmjc")
 text = "Quit"
 
@@ -258,5 +258,14 @@ autoplay = true
 [node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=2114716982]
 bank_paths = ["res://assets/fmod/firewheel/Build/Desktop/Master.bank"]
 
+[node name="story_button" type="Button" parent="." unique_id=1565180146]
+offset_left = 195.0
+offset_top = 98.0
+offset_right = 270.0
+offset_bottom = 125.0
+theme = SubResource("Theme_nqmjc")
+text = "story"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="story_button" to="." method="_on_story_button_pressed"]

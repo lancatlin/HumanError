@@ -24,7 +24,7 @@ const  dark_ball = preload("res://MOB/dark_ball.tscn")
 #---------------------------------------
 
 
-const SPEED: int = 13
+const SPEED: int = 15
 const SEARCH_DISTANCE: int = 999
 
 

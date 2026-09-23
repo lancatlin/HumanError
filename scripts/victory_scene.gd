@@ -8,7 +8,7 @@ func _on_audio_stream_player_finished() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed:
-		_go_to_main_menu()
+		#_go_to_main_menu()
 		
 		
 func _go_to_main_menu() -> void:

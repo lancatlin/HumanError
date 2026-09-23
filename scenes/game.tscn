@@ -632,3 +632,4 @@ tile_map_data = PackedByteArray("AAAQABQAAAARAAUAAAAQABUAAAARAAYAAAAQABYAAAARAAc
 tile_set = SubResource("TileSet_cknww")
 
 [connection signal="shoot_arrow" from="Player/Bow" to="ArrowManager" method="_on_bow_shoot_arrow"]
+[connection signal="bow_shot" from="ArrowManager" to="Player" method="_on_arrow_manager_bow_is_now_shot"]

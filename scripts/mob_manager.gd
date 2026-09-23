@@ -26,19 +26,22 @@ const HEIGHT = 350
 const levels: Array = [
 	{
 		ZombieScene: 6,
-		TrollScene: 2,
+		TrollScene: 4,
 	},
 	{
-		TrollScene: 2,
-		DevilScene: 0,
-		DarkServantScene: 1,
-	},
-	{
+		TrollScene: 4,
 		DevilScene: 2,
 		DarkServantScene: 2,
 	},
 	{
+		ZombieScene: 4,
+		TrollScene: 3,
+		DevilScene: 3,
+		DarkServantScene: 3,
+	},
+	{
 		# empty, only generates Boss
+		DarkServantScene: 2
 	}
 ]
 

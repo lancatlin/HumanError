@@ -78,10 +78,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqmjc"]
-size = Vector2(42.1875, 49.3125)
+size = Vector2(42.1875, 51.3125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs4xq"]
-size = Vector2(43, 53.25)
+size = Vector2(43, 51.625)
 
 [node name="devil" type="CharacterBody2D" unique_id=1975369732]
 script = ExtResource("1_mqn8y")
@@ -95,18 +95,18 @@ autoplay = "idle"
 frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=947368130]
-position = Vector2(-4.09375, -3.34375)
+position = Vector2(-4.09375, -4.34375)
 shape = SubResource("RectangleShape2D_nqmjc")
 
 [node name="HealthComponent" parent="." unique_id=2091267153 instance=ExtResource("3_2r524")]
-MAX_HP = 5
+MAX_HP = 2.0
 
 [node name="HitboxComponent" parent="." unique_id=806359955 node_paths=PackedStringArray("health_component") instance=ExtResource("4_leps7")]
 health_component = NodePath("../HealthComponent")
 character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1375180614]
-position = Vector2(-4, -3)
+position = Vector2(-4, -4)
 shape = SubResource("RectangleShape2D_rs4xq")
 
 [node name="AttackComponent" parent="." unique_id=71310347 instance=ExtResource("5_56d52")]
@@ -114,7 +114,7 @@ physical_attack = 2.0
 character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1113141945]
-position = Vector2(-4, -3)
+position = Vector2(-4, -4.1875)
 shape = SubResource("RectangleShape2D_rs4xq")
 
 [node name="RebornTimer" type="Timer" parent="." unique_id=1934397008]

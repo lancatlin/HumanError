@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://11ct4gqmk50w"]
+
+[ext_resource type="Script" uid="uid://devylhjqi2bfl" path="res://scripts/potion.gd" id="1_le10y"]
+[ext_resource type="Texture2D" uid="uid://c1r77g57vpt2h" path="res://assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7.png" id="1_ym5ma"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqmjc"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_le10y"]
+atlas = ExtResource("1_ym5ma")
+region = Rect2(288, 336, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqmjc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_le10y")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Potion" type="Area2D" unique_id=987243906]
+script = ExtResource("1_le10y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1966895996]
+shape = SubResource("CircleShape2D_nqmjc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=679904932]
+sprite_frames = SubResource("SpriteFrames_nqmjc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://1stlgh38754d" path="res://MOB/devil.tscn" id="7_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://cqgnq6deri6o2" path="res://MOB/zombie.tscn" id="8_0tnpc"]
 [ext_resource type="Script" uid="uid://d07wa8sky033r" path="res://scripts/mob_manager.gd" id="9_kvuet"]
+[ext_resource type="PackedScene" uid="uid://11ct4gqmk50w" path="res://scenes/potion.tscn" id="9_trtic"]
 [ext_resource type="PackedScene" uid="uid://dl1n332fu2eg" path="res://MOB/dark_servant.tscn" id="10_vtaks"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nqmjc"]
@@ -298,6 +299,18 @@ position = Vector2(0, -8)
 unique_name_in_owner = true
 script = ExtResource("5_u5sy4")
 
+[node name="CollectibleManager" type="Node2D" parent="." unique_id=441084873]
+position = Vector2(158, 198)
+
+[node name="Potion" parent="CollectibleManager" unique_id=987243906 instance=ExtResource("9_trtic")]
+position = Vector2(-16, 35)
+
+[node name="Potion2" parent="CollectibleManager" unique_id=645132550 instance=ExtResource("9_trtic")]
+position = Vector2(144, 81)
+
+[node name="Potion3" parent="CollectibleManager" unique_id=595588465 instance=ExtResource("9_trtic")]
+position = Vector2(216, 23)
+
 [node name="MobManager" type="Node2D" parent="." unique_id=932954026]
 unique_name_in_owner = true
 script = ExtResource("9_kvuet")
@@ -312,7 +325,7 @@ position = Vector2(418, 294)
 position = Vector2(53, 260)
 
 [node name="dark_servant" parent="MobManager" unique_id=916341786 instance=ExtResource("10_vtaks")]
-position = Vector2(158, 198)
+position = Vector2(154, 188)
 
 [node name="dark_servant2" parent="MobManager" unique_id=88546915 instance=ExtResource("10_vtaks")]
 position = Vector2(238, 291)

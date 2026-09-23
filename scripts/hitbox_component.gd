@@ -9,3 +9,9 @@ func damage(attack: Attack):
 	print("take damage", attack)
 	if health_component:
 		health_component.damage(attack)
+
+
+func heal(healing: int):
+	if health_component:
+		health_component.heal(healing)
+	

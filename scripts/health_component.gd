@@ -29,6 +29,6 @@ func reset():
 	hp = MAX_HP
 	health_changed.emit(hp, MAX_HP)
 
-
-
-	
+func heal(healing: int) -> void:
+	hp += healing
+	health_changed.emit(hp, healing, MAX_HP)

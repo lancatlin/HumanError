@@ -76,7 +76,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_elgyj"]
-radius = 7.0
+radius = 6.0
 
 [node name="dark_ball" type="Node2D" unique_id=713200606]
 script = ExtResource("1_2se3n")
@@ -89,4 +89,5 @@ autoplay = "default"
 character_class = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1542243952]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_elgyj")

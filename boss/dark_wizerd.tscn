@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b3kftm481hmy7"]
+
+[ext_resource type="Script" uid="uid://b6et5gufq2buu" path="res://scripts/dark_wizerd.gd" id="1_fyvjj"]
+[ext_resource type="Texture2D" uid="uid://d0xpjsj3xksdh" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Running/Wizard1.png" id="2_fyvjj"]
+[ext_resource type="Texture2D" uid="uid://cwl73sxbd1hk" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Running/Wizard2.png" id="3_j7xbi"]
+[ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="3_x4hlj"]
+[ext_resource type="Texture2D" uid="uid://43gh4en2id7x" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Running/Wizard3.png" id="4_35swq"]
+[ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="4_m2ni2"]
+[ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="5_as5f4"]
+[ext_resource type="Texture2D" uid="uid://7qr40gdh7fqb" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Running/Wizard4.png" id="5_fnvi1"]
+[ext_resource type="PackedScene" uid="uid://bhyngk6o4lfwv" path="res://scenes/xp_component.tscn" id="6_a65is"]
+[ext_resource type="Texture2D" uid="uid://3m8l6hlx0gc4" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard5.png" id="6_idm72"]
+[ext_resource type="Texture2D" uid="uid://dv3vebrfcs2s3" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard6.png" id="7_noxdd"]
+[ext_resource type="Texture2D" uid="uid://cspir7wavfljg" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard7.png" id="8_n4xvj"]
+[ext_resource type="Texture2D" uid="uid://d3gaktshej1a3" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd3/Idle/Wizard8.png" id="9_mw78r"]
+[ext_resource type="Texture2D" uid="uid://kxoj8unonusx" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_wizerd/stuff.png" id="14_fyvjj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3dby"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fyvjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j7xbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_35swq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fnvi1")
+}],
+"loop": 1,
+"name": &"chase",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_idm72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_noxdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n4xvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mw78r")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqmjc"]
+size = Vector2(40.625, 57.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rs4xq"]
+size = Vector2(40.802734, 57.283203)
+
+[node name="dark_wizerd" type="CharacterBody2D" unique_id=1975369732]
+collision_layer = 3
+script = ExtResource("1_fyvjj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=268318885]
+scale = Vector2(1.9, 1.9)
+sprite_frames = SubResource("SpriteFrames_p3dby")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=947368130]
+position = Vector2(-2.3125, 2.75)
+shape = SubResource("RectangleShape2D_nqmjc")
+
+[node name="HealthComponent" parent="." unique_id=2091267153 instance=ExtResource("3_x4hlj")]
+MAX_HP = 30
+
+[node name="HitboxComponent" parent="." unique_id=806359955 node_paths=PackedStringArray("health_component") instance=ExtResource("4_m2ni2")]
+health_component = NodePath("../HealthComponent")
+character_class = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1375180614]
+position = Vector2(-2, 3)
+shape = SubResource("RectangleShape2D_rs4xq")
+
+[node name="AttackComponent" parent="." unique_id=71310347 instance=ExtResource("5_as5f4")]
+character_class = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent" unique_id=1113141945]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_rs4xq")
+
+[node name="RebornTimer" type="Timer" parent="." unique_id=1934397008]
+wait_time = 5.0
+one_shot = true
+
+[node name="shot_timer" type="Timer" parent="." unique_id=755131452]
+autostart = true
+
+[node name="XPComponent" parent="." unique_id=1509878037 node_paths=PackedStringArray("health_component") instance=ExtResource("6_a65is")]
+xp = 3
+health_component = NodePath("../HealthComponent")
+
+[node name="staff" type="Node2D" parent="." unique_id=1454641508]
+position = Vector2(101, 20)
+
+[node name="stafftexture" type="Sprite2D" parent="staff" unique_id=2014317669]
+position = Vector2(-85, -28)
+rotation = -1.5707964
+scale = Vector2(0.2631579, 0.25438598)
+texture = ExtResource("14_fyvjj")
+
+[node name="ball_spone" type="Marker2D" parent="staff" unique_id=2014698272]
+position = Vector2(0, -36)
+
+[node name="diverge_timer" type="Timer" parent="staff" unique_id=1413793369]
+wait_time = 5.0
+autostart = true
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]
+[connection signal="timeout" from="RebornTimer" to="." method="_on_reborn_timer_timeout"]
+[connection signal="timeout" from="shot_timer" to="." method="_on_shot_timer_timeout"]
+[connection signal="timeout" from="staff/diverge_timer" to="." method="_on_diverge_timer_timeout"]

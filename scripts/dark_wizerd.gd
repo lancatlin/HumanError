@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var player: Player
+@onready var player: CharacterBody2D = %Player
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var reborn_timer: Timer = $RebornTimer
 @onready var health_component: HealthComponent = $HealthComponent
@@ -10,6 +10,17 @@ extends CharacterBody2D
 @onready var shoot_timer:Timer = $shot_timer  # timer
 const  dark_ball = preload("res://MOB/dark_ball.tscn")
 #------------------------------------------
+
+#-------------load stuff-----------------
+
+@onready var staff:Node2D = $staff
+
+@onready var ball_spone:Marker2D = $staff/ball_spone
+
+#timer
+@onready var diverge_timer:Timer = $staff/diverge_timer
+#---------------------------------------
+
 
 const SPEED: int = -13
 const SEARCH_DISTANCE: int = 999
@@ -58,12 +69,45 @@ func _on_shot_timer_timeout() -> void:
 		
 	var ball = dark_ball.instantiate()
 	
-	ball.global_position = global_position
+	ball.global_position = ball_spone.global_position
 	
 	ball.direction = ball_player_diff.normalized()
 	
 	get_tree().current_scene.add_child(ball)
+	
+#---------------------------------------------
+	
+#------------staff--------------------------------
 
+func _on_diverge_timer_timeout() -> void:
+	#挥法杖
+	var waving = create_tween()
+	#wave
+	waving.tween_property(staff, "rotation", deg_to_rad(95), 0.8)
+	await waving.finished
+	#diverge
+	var diverge_number:int = 23
+	
+	for i:float in range(diverge_number):
+		var ball = dark_ball.instantiate()
+		get_tree().current_scene.add_child(ball)
+		ball.global_position = ball_spone.global_position
+		
+		#rotate
+		var ball_deg:float = 360 / diverge_number * i  
+		
+		#give direction
+		var each_ball_dir:Vector2 = Vector2(0,-1).rotated(deg_to_rad(ball_deg))
+		ball.direction = each_ball_dir
+	
+		#wave back
+	
+	var wave_back = create_tween()
+	wave_back.tween_property(staff,"rotation",deg_to_rad(0),0.5)
+		
+		
+		
+		
 		
 		
 		

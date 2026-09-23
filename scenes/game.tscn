@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cr81o0io1g8yl" path="res://scenes/bow.tscn" id="4_p57ef"]
 [ext_resource type="PackedScene" uid="uid://rvtvif8xtt24" path="res://scenes/hp_bar.tscn" id="4_u5sy4"]
 [ext_resource type="Script" uid="uid://dogix12unluuv" path="res://scripts/arrow_manager.gd" id="5_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://b3kftm481hmy7" path="res://boss/dark_wizerd.tscn" id="8_kvpfn"]
 [ext_resource type="Script" uid="uid://fwgois2c5xvp" path="res://scripts/collectible_manager.gd" id="9_kvpfn"]
 [ext_resource type="Script" uid="uid://d07wa8sky033r" path="res://scripts/mob_manager.gd" id="9_kvuet"]
 
@@ -596,6 +597,8 @@ position = Vector2(-264, -188)
 [node name="HPBar" parent="Player/Camera2D" unique_id=1214830283 instance=ExtResource("4_u5sy4")]
 position = Vector2(-136, -75)
 
+[node name="AudioListener2D" type="AudioListener2D" parent="Player/Camera2D" unique_id=1307884804]
+
 [node name="Bow" parent="Player" unique_id=315595610 instance=ExtResource("4_p57ef")]
 position = Vector2(0, -8)
 
@@ -619,4 +622,8 @@ tile_set = SubResource("TileSet_cknww")
 unique_name_in_owner = true
 script = ExtResource("9_kvuet")
 
+[node name="dark_wizerd" parent="." unique_id=1975369732 node_paths=PackedStringArray("player") instance=ExtResource("8_kvpfn")]
+player = NodePath("../Player")
+
 [connection signal="shoot_arrow" from="Player/Bow" to="ArrowManager" method="_on_bow_shoot_arrow"]
+[connection signal="bow_shot" from="ArrowManager" to="Player" method="_on_arrow_manager_bow_is_now_shot"]

@@ -40,3 +40,8 @@ func _on_health_component_health_changed(current: int, changed: int, max: int) -
 	if changed < 0:
 		pass
 	print("HP: %d/%d" % [current, max])
+
+@onready var shot_sound: AudioStreamPlayer2D = $shot_sound
+func _on_arrow_manager_bow_is_now_shot() -> void:
+	shot_sound.play()
+	

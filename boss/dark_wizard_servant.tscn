@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bqdqasji7lb2f"]
+[gd_scene format=3 uid="uid://cvasrpwmbv8t1"]
 
 [ext_resource type="Script" uid="uid://caraat46x2gce" path="res://scripts/mob/dark_servant.gd" id="1_g5u4x"]
 [ext_resource type="Texture2D" uid="uid://uw2uwraj724r" path="res://assets/0x72_DungeonTilesetII_v1.7/dark_servant.png" id="2_wiu8i"]

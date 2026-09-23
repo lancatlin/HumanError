@@ -15,6 +15,7 @@ signal shoot_arrow(muzzle_pos: Vector2, direction: float, power: float)
 @onready var timer: Timer = $Timer
 @onready var arrow_sprite: Sprite2D = $ArrowSprite
 
+
 const ACCUMULATE_SPEED: float = 1   # increase 0.5 power per second
 const MAX_POWER: float = 3.0
 
@@ -31,6 +32,8 @@ func _process(delta: float) -> void:
 	else:
 		rotation += direction * angular_speed * delta
 	
+#---import bow sound--------
+@onready var shot_sound: AudioStreamPlayer2D = $shot_sound
 
 func _input(event: InputEvent) -> void:  
 	if event.is_action_pressed("fire"):
@@ -42,11 +45,13 @@ func _input(event: InputEvent) -> void:
 		power = 1
 		
 	elif event.is_action_released("fire"):
+		shot_sound.play()
 		hold = false
 		sprite.play("idle")
 		arrow_sprite.hide()
 		shoot_arrow.emit(muzzle.global_position, rotation, power)
-
+		
+		
 
 func _on_timer_timeout() -> void:
 	if hold:

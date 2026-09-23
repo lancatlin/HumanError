@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bqpib52yiq5h1" path="res://assets/0x72_DungeonTilesetII_v1.7/frames/weapon_bow.png" id="1_vt0lb"]
 [ext_resource type="Texture2D" uid="uid://byt2pnkjaqba7" path="res://assets/0x72_DungeonTilesetII_v1.7/frames/weapon_bow_2.png" id="2_rivji"]
 [ext_resource type="PackedScene" uid="uid://dvpnip0rh71uh" path="res://scenes/arrow_sprite.tscn" id="4_atxj4"]
+[ext_resource type="AudioStream" uid="uid://b4bsq1qcw30uq" path="res://assets/sound/bow1.wav" id="5_oxltw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqmjc"]
 animations = [{
@@ -42,6 +43,12 @@ wait_time = 0.5
 [node name="ArrowSprite" parent="." unique_id=1884731302 instance=ExtResource("4_atxj4")]
 position = Vector2(22, 0)
 scale = Vector2(0.5532308, 0.95278025)
+
+[node name="shot_sound" type="AudioStreamPlayer2D" parent="." unique_id=1367944607]
+position = Vector2(21, 1)
+stream = ExtResource("5_oxltw")
+volume_db = 24.0
+autoplay = true
 
 [connection signal="shoot_arrow" from="." to="." method="_on_shoot_arrow"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

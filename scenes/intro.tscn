@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://cftccv11rilq7"]
+
+[ext_resource type="Script" uid="uid://cmyok5l35a7u4" path="res://scripts/intro.gd" id="1_s2ta7"]
+[ext_resource type="FontFile" uid="uid://b6u0wo3ych6mg" path="res://assets/fonts/karmatic-arcade.regular.ttf" id="2_yjqpq"]
+[ext_resource type="Texture2D" uid="uid://c1r77g57vpt2h" path="res://assets/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7.png" id="3_4bx60"]
+[ext_resource type="Texture2D" uid="uid://curaglchw7f3s" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_001.png" id="4_5pmge"]
+[ext_resource type="Texture2D" uid="uid://031a6k85lis6" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_002.png" id="5_hai50"]
+[ext_resource type="Texture2D" uid="uid://0n50q1ifwtoh" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_003.png" id="6_kh17o"]
+[ext_resource type="Texture2D" uid="uid://can1jom1ylvqu" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_004.png" id="7_urird"]
+[ext_resource type="Texture2D" uid="uid://co5c37jbt620y" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_005.png" id="8_t5vr6"]
+[ext_resource type="Texture2D" uid="uid://cd3stwsjcwgyi" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_006.png" id="9_4vp3x"]
+[ext_resource type="Texture2D" uid="uid://b6eqmq8xkrrko" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_007.png" id="10_sg54v"]
+[ext_resource type="Texture2D" uid="uid://chorh8arw0a6s" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_008.png" id="11_yj5im"]
+[ext_resource type="Texture2D" uid="uid://dhaa2dskwdx5y" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_009.png" id="12_h7rjp"]
+[ext_resource type="Texture2D" uid="uid://dllg72q7fohi0" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_010.png" id="13_6ac85"]
+[ext_resource type="Texture2D" uid="uid://4pfls6y0sluv" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_011.png" id="14_lm4bj"]
+[ext_resource type="Texture2D" uid="uid://ciwx0mwkgk4nu" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_012.png" id="15_x2gsc"]
+[ext_resource type="Texture2D" uid="uid://c6nd6o6l2u7wv" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_013.png" id="16_366e5"]
+[ext_resource type="Texture2D" uid="uid://cinnudtnhbkb1" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_014.png" id="17_38pnl"]
+[ext_resource type="Texture2D" uid="uid://effh2ywnhliu" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_015.png" id="18_y6kq6"]
+[ext_resource type="Texture2D" uid="uid://wui7ip127at1" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_016.png" id="19_37w34"]
+[ext_resource type="Texture2D" uid="uid://lehu0txakvu7" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_017.png" id="20_7ukfb"]
+[ext_resource type="Texture2D" uid="uid://cxicorm7mc8ed" path="res://assets/0x72_DungeonTilesetII_v1.7/portal1/frame_018.png" id="21_7kkmp"]
+
+[sub_resource type="Theme" id="Theme_4bx60"]
+default_font = ExtResource("2_yjqpq")
+default_font_size = 16
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("3_4bx60")
+region = Rect2(128, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("3_4bx60")
+region = Rect2(144, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("3_4bx60")
+region = Rect2(160, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("3_4bx60")
+region = Rect2(176, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("3_4bx60")
+region = Rect2(192, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("3_4bx60")
+region = Rect2(208, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("3_4bx60")
+region = Rect2(224, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
+atlas = ExtResource("3_4bx60")
+region = Rect2(240, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i2l1n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur7pv")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_obhly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5pmge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hai50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kh17o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_urird")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_t5vr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4vp3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sg54v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yj5im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_h7rjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6ac85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lm4bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_x2gsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_366e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_38pnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_y6kq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_37w34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7ukfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_7kkmp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Intro" type="Control" unique_id=839161023]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2ta7")
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1525024956]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1845169265]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122395836
+anchor_top = -0.12345679
+anchor_right = 0.8611111
+anchor_bottom = 0.49074066
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "A genius wizard was corrupted by dark magic.
+
+In his madness, he opened portals that released monsters into the world.
+
+Now, you must fix his mistake, stop the monsters, and kill the dark wizard"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="StartButton" type="Button" parent="." unique_id=1955318611]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 453.0
+offset_right = 864.0
+offset_bottom = 571.0
+theme = SubResource("Theme_4bx60")
+theme_override_font_sizes/font_size = 42
+text = "Enter the dungeon!"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=598472671]
+position = Vector2(246.00009, 324.00003)
+scale = Vector2(8.874999, 7.335938)
+sprite_frames = SubResource("SpriteFrames_i2l1n")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="protle" type="AnimatedSprite2D" parent="." unique_id=1190906374]
+position = Vector2(890, 344.00003)
+scale = Vector2(7.21875, 7.1875)
+sprite_frames = SubResource("SpriteFrames_obhly")
+autoplay = "default"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

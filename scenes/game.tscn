@@ -225,6 +225,17 @@ sources/2 = SubResource("TileSetAtlasSource_iywne")
 
 [node name="Game" type="Node2D" unique_id=2093375336]
 
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=212633363]
+event_name = "event:/Fight"
+event_guid = "{e0541313-afdf-4e9f-a6c5-d15a332752ac}"
+autoplay = true
+fmod_parameters/Intensity/id = -5362718028921562221
+fmod_parameters/Intensity = 0
+fmod_parameters/Intensity/variant_type = 2
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=74298780]
+bank_paths = ["res://assets/fmod/firewheel/Build/Desktop/Master.bank"]
+
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=3316208]
 collision_layer = 3
 
@@ -257,6 +268,9 @@ motion_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1261729415]
 zoom = Vector2(4, 4)
+
+[node name="FmodListener2D" type="FmodListener2D" parent="Player/Camera2D" unique_id=1119286884]
+position = Vector2(-264, -188)
 
 [node name="HPBar" parent="Player/Camera2D" unique_id=1214830283 instance=ExtResource("4_u5sy4")]
 position = Vector2(-136, -75)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://duwrwtrwab6i5"
+path="res://.godot/imported/Deep Sub Bass.wav-de6ae283da96e4e506f2563e185a1ae2.sample"
+
+[deps]
+
+source_file="res://assets/fmod/firewheel/Assets/Deep Sub Bass.wav"
+dest_files=["res://.godot/imported/Deep Sub Bass.wav-de6ae283da96e4e506f2563e185a1ae2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

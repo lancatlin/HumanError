@@ -228,8 +228,11 @@ text = "Fire Wheel"
 fit_content = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1882206667]
-position = Vector2(145, 83)
+position = Vector2(144, 81)
 zoom = Vector2(4, 4)
+
+[node name="FmodListener2D" type="FmodListener2D" parent="Camera2D" unique_id=430297386]
+position = Vector2(-145, -83)
 
 [node name="StartButton" type="Button" parent="." unique_id=1808937875]
 offset_left = 63.0
@@ -246,6 +249,14 @@ offset_right = 228.0
 offset_bottom = 127.0
 theme = SubResource("Theme_nqmjc")
 text = "Quit"
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1225542221]
+event_name = "event:/Title"
+event_guid = "{de0972ac-3da8-44d8-a688-87d873d8c1b5}"
+autoplay = true
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=2114716982]
+bank_paths = ["res://assets/fmod/firewheel/Build/Desktop/Master.bank"]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_start_button_pressed"]

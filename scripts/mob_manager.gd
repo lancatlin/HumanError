@@ -4,7 +4,6 @@ class_name MobManager
 @onready var xp_manager: XPManager = %XPManager
 @onready var player: Player = %Player
 @onready var boss_health_bar: BossHealthBar = %BossHealthBar
-@onready var fmod_event_emitter_2d: FmodEventEmitter2D = %FmodEventEmitter2D
 
 
 var level = 0
@@ -84,6 +83,5 @@ func spawn_level():
 		boss.get_node("XPComponent").connect("add_xp", _on_mob_died)
 		add_child(boss)
 		mob_count += 1
-		fmod_event_emitter_2d.set_parameter("intensity", 2)
 		boss_health_bar.setup(boss.get_node("HealthComponent"), "Dark Wizard")
 		

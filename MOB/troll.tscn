@@ -124,7 +124,6 @@ health_component = NodePath("../HealthComponent")
 
 [node name="mob_hurt_sound" type="AudioStreamPlayer2D" parent="." unique_id=436852903]
 stream = ExtResource("7_bqaog")
-volume_db = 5.0
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]

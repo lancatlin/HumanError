@@ -19,18 +19,10 @@ run/main_scene="uid://wmvmjomebt5r"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-FmodManager="*uid://cds10pm7hwn3p"
-
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [input]
 

@@ -119,7 +119,6 @@ autostart = true
 
 [node name="mob_hurt_sound" type="AudioStreamPlayer2D" parent="." unique_id=2137041696]
 stream = ExtResource("15_j7xbi")
-volume_db = 5.0
 
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
 [connection signal="hurted" from="HealthComponent" to="." method="_on_health_component_hurted"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="4_qrc7c"]
 [ext_resource type="PackedScene" uid="uid://cm1ejnti7rf4o" path="res://scenes/attack_component.tscn" id="5_lam6u"]
 [ext_resource type="PackedScene" uid="uid://bhyngk6o4lfwv" path="res://scenes/xp_component.tscn" id="6_6sv4a"]
-[ext_resource type="AudioStream" uid="uid://d3b5bhotg4t8k" path="res://assets/sound/mob_hit.wav" id="7_jwiou"]
+[ext_resource type="AudioStream" uid="uid://bppx7dw0lf2v" path="res://assets/sound/mob_hit.mp3" id="7_jwiou"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_httt1"]
 atlas = ExtResource("2_16msr")

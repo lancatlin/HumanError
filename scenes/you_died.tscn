@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2q4l0oaf3k7m" path="res://scripts/you_died.gd" id="1_died"]
 [ext_resource type="FontFile" uid="uid://b6u0wo3ych6mg" path="res://assets/fonts/karmatic-arcade.regular.ttf" id="2_font"]
-[ext_resource type="AudioStream" uid="uid://dft0117gwkcf3" path="res://assets/sound/game-over.wav" id="3_k4bmk"]
+[ext_resource type="AudioStream" uid="uid://dmowo7xawavq5" path="res://assets/sound/game-over.mp3" id="3_k4bmk"]
 
 [node name="YouDied" type="Control" unique_id=360915141]
 layout_mode = 3

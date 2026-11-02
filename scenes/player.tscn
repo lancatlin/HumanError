@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://df3hix3kogn2a" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://ba8xp335e0ia7" path="res://scenes/hitbox_component.tscn" id="3_dqkch"]
 [ext_resource type="PackedScene" uid="uid://wmikx0o7q65p" path="res://scenes/health_component.tscn" id="3_qhqgy"]
-[ext_resource type="AudioStream" uid="uid://cep00cuclk3hy" path="res://assets/sound/hurt.wav" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://dgv7xkrve4c6o" path="res://assets/sound/hurt.mp3" id="5_qlg0r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
